@@ -12,7 +12,7 @@ public class Galgeleg_spillet extends AppCompatActivity {
         setContentView(R.layout.activity_galgeleg_spillet);
 
 
-        System.out.println("hej");
+        System.out.println("hejhejhejhejhej");
 
 
     }
