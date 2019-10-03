@@ -8,9 +8,10 @@ import android.view.View;
 import android.widget.Button;
 
 
-public class Forside extends AppCompatActivity implements View.OnClickListener {
+public class Hovedmenu extends AppCompatActivity implements View.OnClickListener {
 
 Button minKnap1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
