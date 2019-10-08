@@ -20,8 +20,11 @@ public class Galge_spillet extends AppCompatActivity implements View.OnClickList
     Button prøvigenKnap;
     Button hjælpKnap;
     TextView TV;
+    TextView score;
     EditText ET;
     ImageView image;
+    String Godkendt;
+    String Ikke_godkendt;
 
 
 
@@ -37,18 +40,16 @@ public class Galge_spillet extends AppCompatActivity implements View.OnClickList
         ET = findViewById(R.id.ET);
         TV = findViewById(R.id.TV);
         image = findViewById(R.id.image);
+        score = findViewById(R.id.score);
 
 
 
         TV.setText("Velkommen til galgespillet. " +
-                "\nKan du gætte dette ord: " + logik.getSynligtOrd() + "?" +
+                "\nKan du gætte dette ord: " + logik.getSynligtOrd() + "?" + "\nHusk at kæmp videre, selvom scoren bliver negativ!" +
                 "\nHvis du har nogle bogstaver, så fyr dem løs og tryk på knappen!");
 
 
-
         prøvKnap.setOnClickListener(this);
-
-
 
 
         prøvigenKnap.setOnClickListener(new View.OnClickListener() {
@@ -62,8 +63,6 @@ public class Galge_spillet extends AppCompatActivity implements View.OnClickList
         });
 
 
-
-
         hjælpKnap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -71,6 +70,7 @@ public class Galge_spillet extends AppCompatActivity implements View.OnClickList
             }
         });
     }
+
     public void openActivity3() {
         Intent i = new Intent(this, Hjaelp.class);
         startActivity(i);
@@ -78,26 +78,26 @@ public class Galge_spillet extends AppCompatActivity implements View.OnClickList
     }
 
 
-
-
     @Override
     public void onClick(View view) {
 
-            String bogstav = ET.getText().toString();
+        String bogstav = ET.getText().toString();
 
         if (bogstav.length() != 1) {
             ET.setError("Skriv præcis ét bogstav!");
             return;
         }
-            logik.gætBogstav(bogstav);
-            ET.setText("");
-            ET.setError(null);
+        logik.gætBogstav(bogstav);
+        ET.setText("");
+        ET.setError(null);
 
-            updateScreen();
+        // opdaterer skærmen
+        updateScreen();
 
-            // skjuler tastaturet
-            prøvKnap.onEditorAction(EditorInfo.IME_ACTION_DONE);
-        }
+        // skjuler tastaturet
+        prøvKnap.onEditorAction(EditorInfo.IME_ACTION_DONE);
+
+    }
 
 
     private void updateScreen() {
@@ -108,17 +108,22 @@ public class Galge_spillet extends AppCompatActivity implements View.OnClickList
 
         if (logik.erSpilletVundet() == true) {
             TV.setText("\nTILLYKKE" + "\nDU HAR VUNDET!");
-            image.setImageResource(R.drawable.pokal1);
+
+            score.setText("Din score blev " + Godkendt + ", fordi du var god!");
 
         }
 
         if (logik.erSpilletTabt()) {
 
-            TV.setText("DU HAR TABT! - prøv igen" + "\nOrdet var: " + logik.getOrdet() + "\nDu ");
+            TV.setText("DU HAR TABT! - prøv igen" + "\nOrdet var: " + logik.getOrdet()
+                    + "\nDu kan prøve igen, tryk på 'Prøv igen'");
             image.setImageResource(R.drawable.sadsmiley);
 
-        }
-        if (logik.getAntalForkerteBogstaver() == 1) {
+            score.setText("Din score blev " + Ikke_godkendt + ", fordi du var uheldig");
+
+
+
+        } else if (logik.getAntalForkerteBogstaver() == 1) {
 
             image.setImageResource(R.drawable.forkert1);
 
@@ -127,9 +132,11 @@ public class Galge_spillet extends AppCompatActivity implements View.OnClickList
 
             image.setImageResource(R.drawable.forkert2);
 
+
         } else if (logik.getAntalForkerteBogstaver() == 3) {
 
             image.setImageResource(R.drawable.forkert3);
+
 
 
         } else if (logik.getAntalForkerteBogstaver() == 4) {
@@ -137,17 +144,29 @@ public class Galge_spillet extends AppCompatActivity implements View.OnClickList
             image.setImageResource(R.drawable.forkert4);
 
 
+
         } else if (logik.getAntalForkerteBogstaver() == 5) {
 
             image.setImageResource(R.drawable.forkert5);
+
 
 
         } else if (logik.getAntalForkerteBogstaver() == 6) {
 
             image.setImageResource(R.drawable.forkert6);
 
+
         }
 
+        if (logik.getAntalForkerteBogstaver() < 3){
+
+            Godkendt = "godkendt";
+
+        } else if (logik.getAntalForkerteBogstaver() > 4){
+
+            Ikke_godkendt = "Ikke godkendt";
+
+        }
     }
 }
 
