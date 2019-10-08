@@ -28,8 +28,10 @@ Button minKnap1;
     @Override
     public void onClick(View view) {
 
-        Intent i = new Intent(this, Galgeleg_spillet.class);
+        Intent i = new Intent(this, Galge_spillet.class);
         startActivity(i);
+
+
 
     }
 }
