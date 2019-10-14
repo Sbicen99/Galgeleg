@@ -23,6 +23,7 @@ Button minKnap1;
         minKnap1.setOnClickListener(this);
 
 
+
     }
 
     @Override
@@ -30,7 +31,6 @@ Button minKnap1;
 
         Intent i = new Intent(this, Galge_spillet.class);
         startActivity(i);
-
 
 
     }

@@ -16,16 +16,11 @@ import android.widget.TextView;
 public class Galge_spillet extends AppCompatActivity implements View.OnClickListener {
 
     Galge_spillogik logik = new Galge_spillogik();
-    Button prøvKnap;
-    Button prøvigenKnap;
-    Button hjælpKnap;
-    TextView TV;
-    TextView score;
+    Button prøvKnap; Button prøvigenKnap; Button hjælpKnap;
+    TextView TV; TextView score;
     EditText ET;
     ImageView image;
-    String Godkendt;
-    String Ikke_godkendt;
-
+    int point;
 
 
     @Override
@@ -44,9 +39,10 @@ public class Galge_spillet extends AppCompatActivity implements View.OnClickList
 
 
 
+
         TV.setText("Velkommen til galgespillet. " +
-                "\nKan du gætte dette ord: " + logik.getSynligtOrd() + "?" + "\nHusk at kæmp videre, selvom scoren bliver negativ!" +
-                "\nHvis du har nogle bogstaver, så fyr dem løs og tryk på knappen!");
+                "\nKan du gætte dette ord: " + logik.getSynligtOrd() + "?" + "\nHusk at kæmp videre, selvom scoren ikke bliver godkendt" +
+                "\nHvis du har nogle bogstaver, så fyr dem løs!");
 
 
         prøvKnap.setOnClickListener(this);
@@ -100,6 +96,8 @@ public class Galge_spillet extends AppCompatActivity implements View.OnClickList
     }
 
 
+
+
     private void updateScreen() {
 
         TV.setText("Ordet er: " + logik.getSynligtOrd());
@@ -109,7 +107,10 @@ public class Galge_spillet extends AppCompatActivity implements View.OnClickList
         if (logik.erSpilletVundet() == true) {
             TV.setText("\nTILLYKKE" + "\nDU HAR VUNDET!");
 
-            score.setText("Din score blev " + Godkendt + ", fordi du var god!");
+            point += 10;
+
+            score.setText("Din score: " + point);
+
 
         }
 
@@ -119,7 +120,10 @@ public class Galge_spillet extends AppCompatActivity implements View.OnClickList
                     + "\nDu kan prøve igen, tryk på 'Prøv igen'");
             image.setImageResource(R.drawable.sadsmiley);
 
-            score.setText("Din score blev " + Ikke_godkendt + ", fordi du var uheldig");
+            point -= 10;
+
+            score.setText("Din score: " + point);
+
 
 
 
@@ -155,16 +159,6 @@ public class Galge_spillet extends AppCompatActivity implements View.OnClickList
 
             image.setImageResource(R.drawable.forkert6);
 
-
-        }
-
-        if (logik.getAntalForkerteBogstaver() < 3){
-
-            Godkendt = "godkendt";
-
-        } else if (logik.getAntalForkerteBogstaver() > 4){
-
-            Ikke_godkendt = "Ikke godkendt";
 
         }
     }
