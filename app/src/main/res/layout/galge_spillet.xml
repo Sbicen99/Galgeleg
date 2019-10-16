@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Galge_spillet">
+    tools:context=".Galge_spillet"
+    android:background="@android:color/holo_green_light">
 
     <Button
         android:id="@+id/prøvKnap"
@@ -13,17 +14,18 @@
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="38dp"
+        android:background="@android:color/holo_green_dark"
         android:text="Prøv"
-        android:background="@android:color/black"
         android:textColor="@android:color/white"
+        android:textStyle="bold|italic"
         app:layout_constraintBottom_toTopOf="@+id/image"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/image"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="188dp"
+        android:layout_height="207dp"
         android:layout_marginStart="134dp"
         android:layout_marginEnd="107dp"
         android:layout_marginBottom="16dp"
@@ -41,8 +43,7 @@
         android:layout_marginBottom="32dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:textColorHighlight="#000000"
-        android:textColorLink="#000000"
+        android:textColor="@android:color/white"
         app:layout_constraintBottom_toTopOf="@+id/prøvKnap"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -55,7 +56,7 @@
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
         android:layout_marginBottom="64dp"
-        android:textColor="#000000"
+        android:textColor="@android:color/white"
         app:layout_constraintBottom_toTopOf="@+id/ET"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -65,46 +66,16 @@
         android:id="@+id/prøvigenKnap"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="168dp"
         android:layout_marginTop="55dp"
         android:layout_marginEnd="30dp"
         android:layout_marginBottom="108dp"
+        android:background="@android:color/holo_green_dark"
         android:text="Prøv igen"
-        android:background="@android:color/black"
         android:textColor="@android:color/white"
+        android:textStyle="bold|italic"
         app:layout_constraintBottom_toTopOf="@+id/TV"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/hjælpKnap"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
-
-    <Button
-        android:id="@+id/hjælpKnap"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="55dp"
-        android:layout_marginBottom="108dp"
-        android:text="Hjælp"
-        android:background="@android:color/black"
-        android:textColor="@android:color/white"
-        app:layout_constraintBottom_toTopOf="@+id/TV"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/score"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:textColor="#D2000000"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

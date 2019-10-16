@@ -15,7 +15,7 @@ public class Hjaelp extends AppCompatActivity implements View.OnClickListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_hjaelp);
+        setContentView(R.layout.hjaelp);
 
         textV = findViewById(R.id.textV);
         textV.setText("- Du skal kun skrive ét bogstav" +
@@ -35,8 +35,10 @@ public class Hjaelp extends AppCompatActivity implements View.OnClickListener {
     @Override
     public void onClick(View view) {
 
-        Intent i = new Intent(this, Galge_spillet.class);
+        Intent i = new Intent(this, Hovedmenu.class);
         startActivity(i);
 
     }
+
+
 }

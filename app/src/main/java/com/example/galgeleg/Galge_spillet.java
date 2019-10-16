@@ -17,25 +17,24 @@ public class Galge_spillet extends AppCompatActivity implements View.OnClickList
 
     Galge_spillogik logik = new Galge_spillogik();
     Button prøvKnap; Button prøvigenKnap; Button hjælpKnap;
-    TextView TV; TextView score;
+    TextView TV;
     EditText ET;
     ImageView image;
-    int point;
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_galge_spillet);
+        setContentView(R.layout.galge_spillet);
 
         logik.logStatus();
         prøvKnap = findViewById(R.id.prøvKnap);
         prøvigenKnap = findViewById(R.id.prøvigenKnap);
-        hjælpKnap = findViewById(R.id.hjælpKnap);
+
         ET = findViewById(R.id.ET);
         TV = findViewById(R.id.TV);
         image = findViewById(R.id.image);
-        score = findViewById(R.id.score);
 
 
 
@@ -57,20 +56,6 @@ public class Galge_spillet extends AppCompatActivity implements View.OnClickList
 
             }
         });
-
-
-        hjælpKnap.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openActivity3();
-            }
-        });
-    }
-
-    public void openActivity3() {
-        Intent i = new Intent(this, Hjaelp.class);
-        startActivity(i);
-
     }
 
 
@@ -97,19 +82,16 @@ public class Galge_spillet extends AppCompatActivity implements View.OnClickList
 
 
 
-
     private void updateScreen() {
 
         TV.setText("Ordet er: " + logik.getSynligtOrd());
         TV.append("\n\nDu har " + logik.getAntalForkerteBogstaver() + " forkerte:" + logik.getBrugteBogstaver());
 
 
-        if (logik.erSpilletVundet() == true) {
-            TV.setText("\nTILLYKKE" + "\nDU HAR VUNDET!");
+        if (logik.erSpilletVundet()) {
 
-            point += 10;
-
-            score.setText("Din score: " + point);
+            Intent intent = new Intent(this, Vundet_Galgespillet.class);
+            startActivity(intent);
 
 
         }
@@ -119,10 +101,6 @@ public class Galge_spillet extends AppCompatActivity implements View.OnClickList
             TV.setText("DU HAR TABT! - prøv igen" + "\nOrdet var: " + logik.getOrdet()
                     + "\nDu kan prøve igen, tryk på 'Prøv igen'");
             image.setImageResource(R.drawable.sadsmiley);
-
-            point -= 10;
-
-            score.setText("Din score: " + point);
 
 
 
