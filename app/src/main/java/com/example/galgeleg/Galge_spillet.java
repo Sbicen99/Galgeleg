@@ -29,18 +29,17 @@ public class Galge_spillet extends AppCompatActivity implements View.OnClickList
         setContentView(R.layout.galge_spillet);
 
         logik.logStatus();
-        prøvKnap = findViewById(R.id.prøvKnap);
+        prøvKnap = findViewById(R.id.prøvKnap_hawaii);
         prøvigenKnap = findViewById(R.id.prøvigenKnap);
 
-        ET = findViewById(R.id.ET);
+        ET = findViewById(R.id.ET_hawaii);
         TV = findViewById(R.id.TV);
         image = findViewById(R.id.image);
 
 
 
-
         TV.setText("Velkommen til galgespillet. " +
-                "\nKan du gætte dette ord: " + logik.getSynligtOrd() + "?" + "\nHusk at kæmp videre, selvom scoren ikke bliver godkendt" +
+                "\nKan du gætte dette ord: " + logik.getSynligtOrd() + "?" +
                 "\nHvis du har nogle bogstaver, så fyr dem løs!");
 
 
@@ -104,7 +103,6 @@ public class Galge_spillet extends AppCompatActivity implements View.OnClickList
 
 
 
-
         } else if (logik.getAntalForkerteBogstaver() == 1) {
 
             image.setImageResource(R.drawable.forkert1);
@@ -114,6 +112,7 @@ public class Galge_spillet extends AppCompatActivity implements View.OnClickList
         } else if (logik.getAntalForkerteBogstaver() == 2) {
 
             image.setImageResource(R.drawable.forkert2);
+
 
 
         } else if (logik.getAntalForkerteBogstaver() == 3) {
@@ -142,6 +141,7 @@ public class Galge_spillet extends AppCompatActivity implements View.OnClickList
         }
     }
 }
+
 
 
 

@@ -4,16 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Galge_spillet"
-    android:background="@android:color/holo_green_light">
+    android:background="@android:color/holo_green_light"
+    tools:context=".Galge_spillet">
 
     <Button
-        android:id="@+id/prøvKnap"
+        android:id="@+id/prøvKnap_hawaii"
         android:layout_width="381dp"
         android:layout_height="51dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="38dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="39dp"
         android:background="@android:color/holo_green_dark"
         android:text="Prøv"
         android:textColor="@android:color/white"
@@ -26,16 +26,16 @@
         android:id="@+id/image"
         android:layout_width="188dp"
         android:layout_height="207dp"
-        android:layout_marginStart="134dp"
-        android:layout_marginEnd="107dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginStart="125dp"
+        android:layout_marginEnd="98dp"
+        android:layout_marginBottom="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/galge" />
 
     <EditText
-        android:id="@+id/ET"
+        android:id="@+id/ET_hawaii"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="99dp"
@@ -45,9 +45,8 @@
         android:inputType="textPersonName"
         android:textColor="@android:color/white"
         android:textStyle="italic"
-        app:layout_constraintBottom_toTopOf="@+id/prøvKnap"
+        app:layout_constraintBottom_toTopOf="@+id/prøvKnap_hawaii"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -56,11 +55,11 @@
         android:layout_height="69dp"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
-        android:layout_marginBottom="64dp"
+        android:layout_marginBottom="96dp"
         android:textColor="@android:color/white"
         android:textSize="18sp"
         android:textStyle="italic"
-        app:layout_constraintBottom_toTopOf="@+id/ET"
+        app:layout_constraintBottom_toTopOf="@+id/ET_hawaii"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
@@ -69,16 +68,18 @@
         android:id="@+id/prøvigenKnap"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="293dp"
         android:layout_marginTop="55dp"
         android:layout_marginEnd="30dp"
-        android:layout_marginBottom="108dp"
         android:background="@android:color/holo_green_dark"
         android:text="Prøv igen"
         android:textColor="@android:color/white"
         android:textStyle="bold|italic"
         app:layout_constraintBottom_toTopOf="@+id/TV"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.065" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,8 +1,11 @@
 package com.example.galgeleg;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
@@ -36,7 +39,6 @@ public class Vundet_Galgespillet extends AppCompatActivity implements View.OnCli
                 + "\n\nOrdet var: " + logik.getOrdet());
 
 
-
         MediaPlayer mp = MediaPlayer.create(this,R.raw.vundet);
         mp.start();
 
@@ -45,9 +47,53 @@ public class Vundet_Galgespillet extends AppCompatActivity implements View.OnCli
     @Override
     public void onClick(View view) {
 
-        Intent i = new Intent(this, EnTurTilHawaii.class);
-        startActivity(i);
+        // Viser en dialogboks
+        AlertDialog.Builder builder = new AlertDialog.Builder(Vundet_Galgespillet.this);
+        builder.setMessage("Ønsker du at rejse og prøve et nyt level?")
+                .setCancelable(false)
+                .setPositiveButton("Ja", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
 
+                        openActivity();
+
+                    }
+                })
+
+
+                .setNegativeButton("Nej", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                        openActivity2();
+
+                    }
+                });
+
+        AlertDialog alert = builder.create();
+        alert.setTitle("Vigtigt!");
+        alert.show();
+
+        Button nbutton = alert.getButton(DialogInterface.BUTTON_NEGATIVE);
+        nbutton.setTextColor(Color.GREEN);
+
+        Button pbutton = alert.getButton(DialogInterface.BUTTON_POSITIVE);
+        pbutton.setTextColor(Color.GREEN);
+
+
+    }
+
+    private void openActivity2() {
+
+        Intent in = new Intent(this, Galge_spillet.class);
+        startActivity(in);
+
+    }
+
+    private void openActivity() {
+
+        Intent intent = new Intent(this, EnTurTilHawaii.class);
+        startActivity(intent);
 
     }
 }
