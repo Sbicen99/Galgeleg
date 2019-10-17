@@ -21,9 +21,7 @@ public class Hjaelp extends AppCompatActivity implements View.OnClickListener {
         textV.setText("- Du skal kun skrive ét bogstav" +
                 "\n\n- Du må ikke benytte CAPS LOCK" + "\n\n- Du må ikke benytte tal" +
                 "\n\n\nHints: der er 9 ord i galgespillet, hvor de har at gøre med: " +
-                "\n\n- Computer Science" + "\n- Transportmidler/transport" + "\n- Dyr" + "\n- Tal" +
-                "\n\n\n- Du bliver godkendt eller ikke-godkendt" +
-                "\n\n- Du bliver godkendt lige meget hvad, hvis du vinder!");
+                "\n\n- Computer Science" + "\n- Transportmidler/transport" + "\n- Dyr" + "\n- Tal");
 
 
         tilbageKnap = findViewById(R.id.tilbageKnap);

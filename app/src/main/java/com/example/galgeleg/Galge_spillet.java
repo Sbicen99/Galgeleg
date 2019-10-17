@@ -96,11 +96,11 @@ public class Galge_spillet extends AppCompatActivity implements View.OnClickList
 
         }
 
+
         if (logik.erSpilletTabt()) {
 
-            TV.setText("DU HAR TABT! - prøv igen" + "\nOrdet var: " + logik.getOrdet()
-                    + "\nDu kan prøve igen, tryk på 'Prøv igen'");
-            image.setImageResource(R.drawable.sadsmiley);
+            Intent i = new Intent(this, Tabt_galgespillet.class);
+            startActivity(i);
 
 
 
@@ -108,6 +108,7 @@ public class Galge_spillet extends AppCompatActivity implements View.OnClickList
         } else if (logik.getAntalForkerteBogstaver() == 1) {
 
             image.setImageResource(R.drawable.forkert1);
+
 
 
         } else if (logik.getAntalForkerteBogstaver() == 2) {
