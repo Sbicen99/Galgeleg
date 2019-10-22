@@ -31,12 +31,17 @@ public class Vundet_Galgespillet extends AppCompatActivity implements View.OnCli
         button2.setOnClickListener(this);
 
 
-        // logik.getOrdet kan ikke finde ordet fra forrige aktivitet. Se på det.
+        // Indhenter data fra spil-klassen
+        Intent intent = getIntent();
+        final String value = intent.getStringExtra("mit ord");
+
+
+
 
         TV1.setText("TILLYKKE!!" +
-                "\nDu er klar til prøve nye kræfter af!" + "\nTryk på globussen, og oplev verden." +
+                "\nDu er klar til at prøve nye kræfter af!" + "\nTryk på globussen, og oplev verden." +
                 "\n- Husk billetten og passet, for flyet letter snart!"
-                + "\n\nOrdet var: " + logik.getOrdet());
+                + "\n\nOrdet var: " + value);
 
 
         MediaPlayer mp = MediaPlayer.create(this,R.raw.vundet);

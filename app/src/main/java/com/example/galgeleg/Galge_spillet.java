@@ -90,8 +90,8 @@ public class Galge_spillet extends AppCompatActivity implements View.OnClickList
         if (logik.erSpilletVundet()) {
 
             Intent intent = new Intent(this, Vundet_Galgespillet.class);
+            intent.putExtra("mit ord", logik.getOrdet());
             startActivity(intent);
-
 
         }
 
