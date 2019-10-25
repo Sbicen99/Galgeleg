@@ -9,13 +9,16 @@
 
     <TextView
         android:id="@+id/TV_hawaii"
-        android:layout_width="318dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="52dp"
-        android:layout_marginEnd="36dp"
-        android:textColor="#0E0D0D"
-        android:textSize="24sp"
+        android:layout_width="274dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="104dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="33dp"
+        android:fontFamily="@font/architects_daughter"
+        android:textColor="#FFFCFC"
+        android:textSize="60sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

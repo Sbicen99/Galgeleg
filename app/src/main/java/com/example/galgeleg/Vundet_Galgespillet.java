@@ -14,9 +14,9 @@ import android.widget.TextView;
 
 public class Vundet_Galgespillet extends AppCompatActivity implements View.OnClickListener {
 
+    Galge_spillogik logik = new Galge_spillogik();
     TextView TV1;
     Button button2;
-    Galge_spillogik logik = new Galge_spillogik();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,17 +31,16 @@ public class Vundet_Galgespillet extends AppCompatActivity implements View.OnCli
         button2.setOnClickListener(this);
 
 
-        // Indhenter data fra spil-klassen
+        // Indhenter data fra 'Galge_spillet'-klassen
         Intent intent = getIntent();
-        final String value = intent.getStringExtra("mit ord");
-
+        final int antalForsøg = intent.getIntExtra("antal forsøg", logik.getAntalForkerteBogstaver());
 
 
 
         TV1.setText("TILLYKKE!!" +
                 "\nDu er klar til at prøve nye kræfter af!" + "\nTryk på globussen, og oplev verden." +
                 "\n- Husk billetten og passet, for flyet letter snart!"
-                + "\n\nOrdet var: " + value);
+                + "\n\n- Du brugte " + antalForsøg + " forsøg, inden du gættede ordet!");
 
 
         MediaPlayer mp = MediaPlayer.create(this,R.raw.vundet);

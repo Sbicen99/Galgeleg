@@ -22,7 +22,6 @@ public class Galge_spillet extends AppCompatActivity implements View.OnClickList
     ImageView image;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -89,8 +88,9 @@ public class Galge_spillet extends AppCompatActivity implements View.OnClickList
 
         if (logik.erSpilletVundet()) {
 
+
             Intent intent = new Intent(this, Vundet_Galgespillet.class);
-            intent.putExtra("mit ord", logik.getOrdet());
+            intent.putExtra("antal forsøg", logik.getAntalForkerteBogstaver());
             startActivity(intent);
 
         }
@@ -99,6 +99,7 @@ public class Galge_spillet extends AppCompatActivity implements View.OnClickList
         if (logik.erSpilletTabt()) {
 
             Intent i = new Intent(this, Tabt_galgespillet.class);
+            i.putExtra("mit ord", logik.getOrdet());
             startActivity(i);
 
 

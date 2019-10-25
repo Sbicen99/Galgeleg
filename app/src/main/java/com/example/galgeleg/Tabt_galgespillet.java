@@ -26,8 +26,13 @@ public class Tabt_galgespillet extends AppCompatActivity implements View.OnClick
         prøvigenKnap = findViewById(R.id.prøvigenKnap);
 
 
+        // Indhenter data fra 'Galge_spillet'-klassen
+        Intent i = getIntent();
+        final String mitOrd = i.getStringExtra("mit ord");
 
-        TV_tabt.setText("DU HAR TABT! - prøv igen" + "\nOrdet var: " + logik.getOrdet()
+
+
+        TV_tabt.setText("DU HAR TABT! - prøv igen" + "\nOrdet var: " + mitOrd
                 + "\nDu kan prøve igen, tryk på 'Prøv igen'");
 
         prøvigenKnap.setOnClickListener(this);

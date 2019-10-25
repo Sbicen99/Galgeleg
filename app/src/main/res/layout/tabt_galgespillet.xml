@@ -37,10 +37,11 @@
         android:layout_marginTop="49dp"
         android:layout_marginEnd="36dp"
         android:layout_marginBottom="116dp"
-        android:text="Prøv igen"
         android:background="@android:color/holo_green_dark"
+        android:text="Prøv igen"
         android:textColor="@android:color/white"
         app:layout_constraintBottom_toTopOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.255" />
 </androidx.constraintlayout.widget.ConstraintLayout>
