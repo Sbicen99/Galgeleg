@@ -197,6 +197,7 @@ public class Galge_spillogik {
 
         System.out.println("muligeOrd = " + muligeOrd);
         nulstil();
+
     }
 
 

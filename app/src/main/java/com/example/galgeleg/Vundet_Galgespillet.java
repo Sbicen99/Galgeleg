@@ -79,13 +79,26 @@ public class Vundet_Galgespillet extends AppCompatActivity implements View.OnCli
         alert.show();
 
         Button nbutton = alert.getButton(DialogInterface.BUTTON_NEGATIVE);
-        nbutton.setTextColor(Color.GREEN);
+        nbutton.setTextColor(Color.BLACK);
 
         Button pbutton = alert.getButton(DialogInterface.BUTTON_POSITIVE);
-        pbutton.setTextColor(Color.GREEN);
+        pbutton.setTextColor(Color.BLACK);
 
+
+        openActivity_hawaii();
 
     }
+
+
+
+    private void openActivity_hawaii() {
+
+        // Får globussen til at rotere.
+    button2.animate().rotation(button2.getRotation()-360*4).start();
+
+    }
+
+
 
     private void openActivity2() {
 
