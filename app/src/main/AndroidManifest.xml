@@ -9,8 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Tabt_galgespillet"></activity>
-        <activity android:name=".EnTurTilHawaii" />
+        <activity android:name=".Highscore"></activity>
+        <activity android:name=".Next_Level" />
+        <activity android:name=".Tabt_galgespillet" />
         <activity android:name=".Vundet_Galgespillet" />
         <activity android:name=".Hjaelp" />
         <activity android:name=".Galge_spillet" />

@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 public class Vundet_Galgespillet extends AppCompatActivity implements View.OnClickListener {
 
+    Galge_spillet spillet = new Galge_spillet();
     Galge_spillogik logik = new Galge_spillogik();
     TextView TV1;
     Button button2;
@@ -27,7 +28,6 @@ public class Vundet_Galgespillet extends AppCompatActivity implements View.OnCli
         TV1 = findViewById(R.id.TV1);
         button2 = findViewById(R.id.button2);
 
-
         button2.setOnClickListener(this);
 
 
@@ -36,13 +36,19 @@ public class Vundet_Galgespillet extends AppCompatActivity implements View.OnCli
         final int antalForsøg = intent.getIntExtra("antal forsøg", logik.getAntalForkerteBogstaver());
 
 
+        Intent in = getIntent();
+        final int scoren = in.getIntExtra("scoreen", spillet.score);
+
+
+
 
         TV1.setText("TILLYKKE!!" +
-                "\nDu er klar til at prøve nye kræfter af!" + "\nTryk på globussen, og oplev verden." +
-                "\n- Husk billetten og passet, for flyet letter snart!"
-                + "\n\n- Du brugte " + antalForsøg + " forsøg, inden du gættede ordet!");
+                "\nDu er klar til at prøve nye kræfter af!" + "\nTryk på globussen, og oplev et nyt level"
+                + "\n\n- Du brugte " + antalForsøg + " forsøg, inden du gættede ordet!" +
+                "\n- Din score blev: " + scoren);
 
 
+        //Afspiller en lyd, når aktiviteten begynder
         MediaPlayer mp = MediaPlayer.create(this,R.raw.vundet);
         mp.start();
 
@@ -53,14 +59,13 @@ public class Vundet_Galgespillet extends AppCompatActivity implements View.OnCli
 
         // Viser en dialogboks
         AlertDialog.Builder builder = new AlertDialog.Builder(Vundet_Galgespillet.this);
-        builder.setMessage("Ønsker du at rejse og prøve et nyt level?")
+        builder.setMessage("Ønsker du at prøve et nyt level?")
                 .setCancelable(false)
                 .setPositiveButton("Ja", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
 
                         openActivity();
-
                     }
                 })
 
@@ -89,16 +94,12 @@ public class Vundet_Galgespillet extends AppCompatActivity implements View.OnCli
 
     }
 
-
-
     private void openActivity_hawaii() {
 
         // Får globussen til at rotere.
     button2.animate().rotation(button2.getRotation()-360*4).start();
 
     }
-
-
 
     private void openActivity2() {
 
@@ -109,8 +110,16 @@ public class Vundet_Galgespillet extends AppCompatActivity implements View.OnCli
 
     private void openActivity() {
 
-        Intent intent = new Intent(this, EnTurTilHawaii.class);
+        Intent intent = new Intent(this, Next_Level.class);
         startActivity(intent);
 
     }
 }
+
+
+
+
+
+
+
+

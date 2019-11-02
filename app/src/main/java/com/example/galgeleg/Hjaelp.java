@@ -37,6 +37,7 @@ public class Hjaelp extends AppCompatActivity implements View.OnClickListener {
 
         Intent i = new Intent(this, Hovedmenu.class);
         startActivity(i);
+        finish();
 
     }
 

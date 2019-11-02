@@ -20,6 +20,7 @@ public class Galge_spillet extends AppCompatActivity implements View.OnClickList
     TextView TV;
     EditText ET;
     ImageView image;
+    int score = 0;
 
 
     @Override
@@ -57,6 +58,7 @@ public class Galge_spillet extends AppCompatActivity implements View.OnClickList
     }
 
 
+
     @Override
     public void onClick(View view) {
 
@@ -88,10 +90,16 @@ public class Galge_spillet extends AppCompatActivity implements View.OnClickList
 
         if (logik.erSpilletVundet()) {
 
+            score += 10;
 
             Intent intent = new Intent(this, Vundet_Galgespillet.class);
             intent.putExtra("antal forsøg", logik.getAntalForkerteBogstaver());
             startActivity(intent);
+
+            Intent in = new Intent(this, Vundet_Galgespillet.class);
+            intent.putExtra("score", score);
+            startActivity(in);
+
 
         }
 
@@ -104,40 +112,31 @@ public class Galge_spillet extends AppCompatActivity implements View.OnClickList
 
 
 
-        } else if (logik.getAntalForkerteBogstaver() == 1) {
+        } switch (logik.getAntalForkerteBogstaver()){
 
-            image.setImageResource(R.drawable.forkert1);
+            case 1:
+                image.setImageResource(R.drawable.forkert1);
+                break;
 
+            case 2:
+                image.setImageResource(R.drawable.forkert2);
+                break;
 
+            case 3:
+                image.setImageResource(R.drawable.forkert3);
+                break;
 
-        } else if (logik.getAntalForkerteBogstaver() == 2) {
+            case 4:
+                image.setImageResource(R.drawable.forkert4);
+                break;
 
-            image.setImageResource(R.drawable.forkert2);
-
-
-
-        } else if (logik.getAntalForkerteBogstaver() == 3) {
-
-            image.setImageResource(R.drawable.forkert3);
-
-
-
-        } else if (logik.getAntalForkerteBogstaver() == 4) {
-
-            image.setImageResource(R.drawable.forkert4);
-
-
-
-        } else if (logik.getAntalForkerteBogstaver() == 5) {
-
-            image.setImageResource(R.drawable.forkert5);
+            case 5:
+                image.setImageResource(R.drawable.forkert5);
+                break;
 
 
-
-        } else if (logik.getAntalForkerteBogstaver() == 6) {
-
-            image.setImageResource(R.drawable.forkert6);
-
+            default:
+                image.setImageResource(R.drawable.forkert6);
 
         }
     }

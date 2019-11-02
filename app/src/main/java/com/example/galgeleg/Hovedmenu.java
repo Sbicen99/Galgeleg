@@ -40,6 +40,7 @@ Button minKnap1; Button hjælpKnap;
         Intent in = new Intent(this, Hjaelp.class);
         startActivity(in);
 
+
     }
 
 
