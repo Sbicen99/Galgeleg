@@ -16,11 +16,10 @@ import android.widget.TextView;
 public class Galge_spillet extends AppCompatActivity implements View.OnClickListener {
 
     Galge_spillogik logik = new Galge_spillogik();
-    Button prøvKnap; Button prøvigenKnap; Button hjælpKnap;
+    Button prøvKnap; Button prøvigenKnap;
     TextView TV;
     EditText ET;
     ImageView image;
-    int score = 0;
 
 
     @Override
@@ -29,10 +28,10 @@ public class Galge_spillet extends AppCompatActivity implements View.OnClickList
         setContentView(R.layout.galge_spillet);
 
         logik.logStatus();
-        prøvKnap = findViewById(R.id.prøvKnap_hawaii);
+        prøvKnap = findViewById(R.id.prøvKnap);
         prøvigenKnap = findViewById(R.id.prøvigenKnap);
 
-        ET = findViewById(R.id.ET_hawaii);
+        ET = findViewById(R.id.ET);
         TV = findViewById(R.id.TV);
         image = findViewById(R.id.image);
 
@@ -90,25 +89,24 @@ public class Galge_spillet extends AppCompatActivity implements View.OnClickList
 
         if (logik.erSpilletVundet()) {
 
-            score += 10;
 
             Intent intent = new Intent(this, Vundet_Galgespillet.class);
             intent.putExtra("antal forsøg", logik.getAntalForkerteBogstaver());
             startActivity(intent);
-
-            Intent in = new Intent(this, Vundet_Galgespillet.class);
-            intent.putExtra("score", score);
-            startActivity(in);
-
+            finish();
 
         }
 
 
         if (logik.erSpilletTabt()) {
 
+
             Intent i = new Intent(this, Tabt_galgespillet.class);
             i.putExtra("mit ord", logik.getOrdet());
             startActivity(i);
+            finish();
+
+
 
 
 

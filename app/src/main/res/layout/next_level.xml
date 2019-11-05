@@ -4,52 +4,79 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/holo_green_light"
-    tools:context=".Next_Level">
-
-    <EditText
-        android:id="@+id/ET_nextL"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="34dp"
-        android:layout_marginBottom="14dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/Knap_nextL"
-        app:layout_constraintEnd_toEndOf="@+id/TV_nextL"
-        app:layout_constraintTop_toBottomOf="@+id/TV_nextL" />
-
-    <Button
-        android:id="@+id/Knap_nextL"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="47dp"
-        android:text="Prøv"
-        android:textStyle="italic"
-        app:layout_constraintBottom_toTopOf="@+id/IV_nextL"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ET_nextL" />
+    tools:context=".Next_level">
 
     <ImageView
-        android:id="@+id/IV_nextL"
+        android:id="@+id/imageHawaii"
+        android:layout_width="0dp"
+        android:layout_height="615dp"
+        android:scaleType="fitXY"
+        app:layout_constraintBaseline_toBaselineOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/billedehawaii" />
+
+    <TextView
+        android:id="@+id/TV_hawaii"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="26dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="137dp"
+        android:layout_marginBottom="135dp"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/prøv_knap_hawaii"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/prøv_igen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="49dp"
+        android:layout_marginEnd="24dp"
+        android:background="@android:color/white"
+        android:text="prøv igen"
+        android:textColor="@android:color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editText_hawaii"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="237dp"
+        android:backgroundTint="@android:color/black"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textColorLink="#E7E1E0"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/prøv_knap_hawaii"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:background="@android:color/white"
+        android:text="Button"
+        android:textColor="@android:color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_hawaii" />
+
+    <ImageView
+        android:id="@+id/galge_billederne"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="17dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Knap_nextL"
         app:srcCompat="@drawable/galge" />
 
-    <TextView
-        android:id="@+id/TV_nextL"
-        android:layout_width="302dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="87dp"
-        android:layout_marginBottom="62dp"
-        app:layout_constraintBottom_toTopOf="@+id/ET_nextL"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

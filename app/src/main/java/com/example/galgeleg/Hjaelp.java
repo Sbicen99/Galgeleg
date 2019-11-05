@@ -23,7 +23,7 @@ public class Hjaelp extends AppCompatActivity implements View.OnClickListener {
                 "\n- Du må ikke benytte CAPS LOCK" + "\n- Når du ser hele figuren og hører lyden, er spillet færdigt " + "\n- Du må ikke benytte tal" +
                 "\n\n\nHints: der er 9 ord i galgespillet, som har at gøre med: " +
                 "\n\n- Computer Science" + "\n- Transportmidler/transport" + "\n- Dyr" + "\n- Tal" + "\n\n\nMotivation/næste levels:" +
-                "\n- Du kan udforske verden" + "\n- Der kommer flere ord");
+                "\n- Du kan komme til et nyt level");
 
 
         tilbageKnap = findViewById(R.id.tilbageKnap);

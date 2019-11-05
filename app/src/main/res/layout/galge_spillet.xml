@@ -8,7 +8,7 @@
     tools:context=".Galge_spillet">
 
     <Button
-        android:id="@+id/prøvKnap_hawaii"
+        android:id="@+id/prøvKnap"
         android:layout_width="381dp"
         android:layout_height="51dp"
         android:layout_marginStart="15dp"
@@ -35,7 +35,7 @@
         app:srcCompat="@drawable/galge" />
 
     <EditText
-        android:id="@+id/ET_hawaii"
+        android:id="@+id/ET"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="99dp"
@@ -44,9 +44,10 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:textColor="@android:color/white"
+        android:textColorLink="#E7E1E0"
         android:textStyle="italic"
         android:backgroundTint="@android:color/black"
-        app:layout_constraintBottom_toTopOf="@+id/prøvKnap_hawaii"
+        app:layout_constraintBottom_toTopOf="@+id/prøvKnap"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -60,7 +61,7 @@
         android:textColor="@android:color/white"
         android:textSize="18sp"
         android:textStyle="italic"
-        app:layout_constraintBottom_toTopOf="@+id/ET_hawaii"
+        app:layout_constraintBottom_toTopOf="@+id/ET"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />

@@ -21,6 +21,7 @@ Button minKnap1; Button hjælpKnap;
         minKnap1 = findViewById(R.id.minKnap1);
         hjælpKnap = findViewById(R.id.hjælpKnap2);
 
+
         minKnap1.setOnClickListener(this);
         hjælpKnap.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -34,6 +35,7 @@ Button minKnap1; Button hjælpKnap;
 
 
     }
+
 
     private void openActivity2() {
 
