@@ -39,14 +39,7 @@ public class Next_level extends AppCompatActivity implements View.OnClickListene
         prøv_knap_hawaii.setOnClickListener(this);
 
 
-        // Melder null
-        TV_hawaii.setText("Ordet er: " + hentOrd.brugbareOrd);
-
-
     }
-
-
-
 
     @Override
     public void onClick(View view) {
@@ -71,11 +64,31 @@ public class Next_level extends AppCompatActivity implements View.OnClickListene
 
     }
 
-
     private void updateScreen() {
 
 
+        // Melder nullc - fejl
+        TV_hawaii.setText("Ordet er: " + hentOrd.brugbareOrd);
+       // TV_hawaii.append("\n\nDu har " + logik.getAntalForkerteBogstaver() + " forkerte:" + logik.getBrugteBogstaver());
 
+
+        if (logik.erSpilletVundet()) {
+
+
+            Intent intent = new Intent(this, Vundet_Galgespillet.class);
+            intent.putExtra("antal forsøg", logik.getAntalForkerteBogstaver());
+            startActivity(intent);
+            finish();
+
+        }
+
+        if (logik.erSpilletTabt()) {
+
+
+            Intent i = new Intent(this, Tabt_galgespillet.class);
+            i.putExtra("mit ord", logik.getOrdet());
+            startActivity(i);
+            finish();
 
 
 
@@ -105,7 +118,7 @@ public class Next_level extends AppCompatActivity implements View.OnClickListene
             default:
                 galge_billederne.setImageResource(R.drawable.forkert6);
 
+            }
         }
-
     }
 }

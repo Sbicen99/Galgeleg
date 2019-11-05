@@ -10,7 +10,7 @@ import java.lang.ref.WeakReference;
 
 // Fået inspiration fra Discord-serveren: #DTU Software Diplom
 // Brugbar link: https://stackoverflow.com/questions/38627850/asynctask-doinbackground-downloading-google-spreadsheets-data-returning-null
-// Mener at der skal bruges threats, men har ikke lige fanget den endnu - spørg hjælpelærere i afleveringen til d. 6.
+// Mener at der skal bruges threats, men har ikke lige 'fanget' den endnu - spørg hjælpelærere i afleveringen til d. 6.
 
 public class HentOrdRegneark extends AppCompatActivity {
 

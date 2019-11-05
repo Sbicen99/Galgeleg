@@ -12,9 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".HentOrdRegneark"></activity>
+        <activity android:name=".Highscore_spillet"></activity>
+        <activity android:name=".HentOrdRegneark" />
         <activity android:name=".Next_level" />
-        <activity android:name=".Highscore" />
         <activity android:name=".Tabt_galgespillet" />
         <activity android:name=".Vundet_Galgespillet" />
         <activity android:name=".Hjaelp" />

@@ -100,7 +100,7 @@ public class Vundet_Galgespillet extends AppCompatActivity implements View.OnCli
         editor.apply();
 
 
-        Intent intent = new Intent(getApplicationContext(), Highscore.class);
+        Intent intent = new Intent(getApplicationContext(), Highscore_spillet.class);
         startActivity(intent);
         finish();
 
@@ -118,7 +118,7 @@ public class Vundet_Galgespillet extends AppCompatActivity implements View.OnCli
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
 
-                       // openActivity();
+                       openActivity();
                     }
                 })
 
@@ -144,6 +144,13 @@ public class Vundet_Galgespillet extends AppCompatActivity implements View.OnCli
 
 
         openActivity1();
+
+    }
+
+    private void openActivity() {
+
+        Intent intent = new Intent(this, Next_level.class);
+        startActivity(intent);
 
     }
 
