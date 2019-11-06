@@ -10,7 +10,7 @@ import android.widget.Button;
 
 public class Hovedmenu extends AppCompatActivity implements View.OnClickListener {
 
-Button minKnap1; Button hjælpKnap;
+Button minKnap1; Button hjælpKnap; Button tester;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,9 +20,19 @@ Button minKnap1; Button hjælpKnap;
 
         minKnap1 = findViewById(R.id.minKnap1);
         hjælpKnap = findViewById(R.id.hjælpKnap2);
+        tester = findViewById(R.id.tester);
+
 
 
         minKnap1.setOnClickListener(this);
+        tester.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                testActivity();
+
+            }
+        });
         hjælpKnap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -33,6 +43,14 @@ Button minKnap1; Button hjælpKnap;
             }
         });
 
+
+    }
+
+    //Test - også XML-filen
+    private void testActivity() {
+
+        Intent test = new Intent(this, Test_klasse.class);
+        startActivity(test);
 
     }
 

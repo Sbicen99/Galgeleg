@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.galgeleg">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -11,8 +12,10 @@
         android:label="@string/Galgespillet"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".Highscore_spillet"></activity>
+        android:theme="@style/AppTheme"
+        tools:replace="android:label">
+        <activity android:name=".Test_klasse"></activity>
+        <activity android:name=".Highscore_spillet" />
         <activity android:name=".HentOrdRegneark" />
         <activity android:name=".Next_level" />
         <activity android:name=".Tabt_galgespillet" />

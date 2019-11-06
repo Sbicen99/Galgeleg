@@ -14,7 +14,7 @@ import java.util.ArrayList;
 
 public class Highscore_spillet extends AppCompatActivity implements View.OnClickListener {
 
-
+// Test - til array (remove)
     Button testknap;
     ListView listview1; ListView listview2;
     int sidsteScore;
@@ -25,12 +25,14 @@ public class Highscore_spillet extends AppCompatActivity implements View.OnClick
         super.onCreate(savedInstanceState);
         setContentView(R.layout.highscore_spillet);
 
-
+            //Test - til array (remove)
             testknap = findViewById(R.id.testknap);
+
             listview1 = findViewById(R.id.listview1);
             listview2 = findViewById(R.id.listview2);
 
 
+            //Test - array (remove)
             testknap.setOnClickListener(this);
 
 
@@ -138,6 +140,8 @@ public class Highscore_spillet extends AppCompatActivity implements View.OnClick
 
     }
 
+
+    //Test - til array (remove)
     @Override
     public void onClick(View view) {
 

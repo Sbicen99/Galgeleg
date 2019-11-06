@@ -2,15 +2,21 @@ package com.example.galgeleg;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
+
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import nl.dionsegijn.konfetti.KonfettiView;
+import nl.dionsegijn.konfetti.models.Shape;
+import nl.dionsegijn.konfetti.models.Size;
 
 public class Vundet_Galgespillet extends AppCompatActivity implements View.OnClickListener {
 
@@ -18,6 +24,7 @@ public class Vundet_Galgespillet extends AppCompatActivity implements View.OnCli
     Button button2; Button button;
     TextView tv_score;
     int score = 0;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +51,26 @@ public class Vundet_Galgespillet extends AppCompatActivity implements View.OnCli
         button2 = findViewById(R.id.button2);
 
         button2.setOnClickListener(this);
+
+
+
+        //Spørg - app'en crasher
+
+      /*  KonfettiView konfettiView = findViewById(R.id.viewKonfetti);
+
+
+            konfettiView.build()
+                    .addColors(Color.YELLOW, Color.GREEN, Color.MAGENTA, Color.RED)
+                    .setDirection(0.0, 359.0)
+                    .setSpeed(1f, 5f)
+                    .setFadeOutEnabled(true)
+                    .setTimeToLive(3000L)
+                    .addShapes(Shape.RECT, Shape.CIRCLE)
+                    .addSizes(new Size(12, 5))
+                    .setPosition(-50f, konfettiView.getWidth() + 50f, -50f, -50f)
+                    .streamFor(200, 5000L);
+
+        */
 
 
 
@@ -127,7 +154,7 @@ public class Vundet_Galgespillet extends AppCompatActivity implements View.OnCli
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
 
-                        openActivity2();
+                        openActivity1();
 
                     }
                 });
@@ -143,9 +170,11 @@ public class Vundet_Galgespillet extends AppCompatActivity implements View.OnCli
         pbutton.setTextColor(Color.BLACK);
 
 
-        openActivity1();
+        button2.animate().rotation(button2.getRotation()-360*4).start();
+
 
     }
+
 
     private void openActivity() {
 
@@ -154,14 +183,8 @@ public class Vundet_Galgespillet extends AppCompatActivity implements View.OnCli
 
     }
 
+
     private void openActivity1() {
-
-        // Får globussen til at rotere.
-    button2.animate().rotation(button2.getRotation()-360*4).start();
-
-    }
-
-    private void openActivity2() {
 
         Intent in = new Intent(this, Galge_spillet.class);
         startActivity(in);
