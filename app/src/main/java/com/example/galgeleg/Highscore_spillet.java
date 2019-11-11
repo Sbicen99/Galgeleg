@@ -2,7 +2,6 @@ package com.example.galgeleg;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
@@ -11,6 +10,7 @@ import android.widget.Button;
 import android.widget.ListView;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Highscore_spillet extends AppCompatActivity implements View.OnClickListener {
 
@@ -26,7 +26,7 @@ public class Highscore_spillet extends AppCompatActivity implements View.OnClick
         setContentView(R.layout.highscore_spillet);
 
             //Test - til array (remove)
-            testknap = findViewById(R.id.testknap);
+            testknap = findViewById(R.id.remove);
 
             listview1 = findViewById(R.id.listview1);
             listview2 = findViewById(R.id.listview2);
@@ -138,6 +138,8 @@ public class Highscore_spillet extends AppCompatActivity implements View.OnClick
             listview1.setAdapter(arrayAdapter);
 
 
+
+
     }
 
 
@@ -145,7 +147,8 @@ public class Highscore_spillet extends AppCompatActivity implements View.OnClick
     @Override
     public void onClick(View view) {
 
-        // Skal implementeres: man skal kunne nulstille sin highscore
+        listview1.setAdapter(null);
+
 
 
     }

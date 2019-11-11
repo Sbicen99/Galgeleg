@@ -1,12 +1,14 @@
 package com.example.galgeleg;
 
+
 import androidx.appcompat.app.AppCompatActivity;
 
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -33,13 +35,13 @@ public class Galge_spillet extends AppCompatActivity implements View.OnClickList
 
         ET = findViewById(R.id.ET);
         TV = findViewById(R.id.TV);
+
         image = findViewById(R.id.image);
 
 
 
-        TV.setText("Velkommen til galgespillet. " +
-                "\nKan du gætte dette ord: " + logik.getSynligtOrd() + "?" +
-                "\nHvis du har nogle bogstaver, så fyr dem løs!");
+        TV.setText("Velkommen til galgespillet! " +
+                    "\nKan du gætte ordet: " + logik.getSynligtOrd() + "?" );
 
 
         prøvKnap.setOnClickListener(this);
@@ -56,8 +58,6 @@ public class Galge_spillet extends AppCompatActivity implements View.OnClickList
         });
     }
 
-
-
     @Override
     public void onClick(View view) {
 
@@ -71,14 +71,18 @@ public class Galge_spillet extends AppCompatActivity implements View.OnClickList
         ET.setText("");
         ET.setError(null);
 
+
         // opdaterer skærmen
         updateScreen();
 
+
         // skjuler tastaturet
-        prøvKnap.onEditorAction(EditorInfo.IME_ACTION_DONE);
+           InputMethodManager imm = (InputMethodManager)
+                    getSystemService(Context.INPUT_METHOD_SERVICE);
+           imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
 
-    }
 
+        }
 
 
     private void updateScreen() {
@@ -88,7 +92,6 @@ public class Galge_spillet extends AppCompatActivity implements View.OnClickList
 
 
         if (logik.erSpilletVundet()) {
-
 
             Intent intent = new Intent(this, Vundet_Galgespillet.class);
             intent.putExtra("antal forsøg", logik.getAntalForkerteBogstaver());
@@ -100,17 +103,16 @@ public class Galge_spillet extends AppCompatActivity implements View.OnClickList
 
         if (logik.erSpilletTabt()) {
 
-
             Intent i = new Intent(this, Tabt_galgespillet.class);
             i.putExtra("mit ord", logik.getOrdet());
             startActivity(i);
             finish();
 
 
-
-
-
         } switch (logik.getAntalForkerteBogstaver()){
+
+            case 0:
+                image.setImageResource(R.drawable.galge);
 
             case 1:
                 image.setImageResource(R.drawable.forkert1);
@@ -135,9 +137,9 @@ public class Galge_spillet extends AppCompatActivity implements View.OnClickList
 
             default:
                 image.setImageResource(R.drawable.forkert6);
-
         }
     }
+
 }
 
 

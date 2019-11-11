@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Highscore_spillet"
-    android:background="@android:color/holo_green_light"
+    android:background="@color/brugbarFarve"
     >
 
     <ListView
@@ -14,7 +14,8 @@
         android:layout_height="281dp"
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="39dp"
-        app:layout_constraintBottom_toTopOf="@+id/testknap"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/remove"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
@@ -27,7 +28,7 @@
         android:gravity="center_horizontal"
         android:text="HIGHSCORE"
         android:textColor="@android:color/white"
-        android:textSize="30sp"
+        android:textSize="36sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/listview2"
         app:layout_constraintEnd_toEndOf="parent"
@@ -41,16 +42,20 @@
         android:layout_height="281dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="39dp"
-        app:layout_constraintBottom_toTopOf="@+id/testknap"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/remove"
         app:layout_constraintEnd_toStartOf="@+id/listview1"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/testknap"
+        android:id="@+id/remove"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="100dp"
+        android:background="@android:color/black"
+        android:fontFamily="casual"
         android:text="Remove"
+        android:textColor="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"

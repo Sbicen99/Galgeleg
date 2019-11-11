@@ -16,8 +16,6 @@ public class Next_level extends AppCompatActivity implements View.OnClickListene
 
 
     Galge_spillogik logik = new Galge_spillogik();
-    HentOrdRegneark hentOrd = new HentOrdRegneark();
-
     Button prøv_igen; Button prøv_knap_hawaii;
     ImageView galge_billederne;
     EditText editText_hawaii;
@@ -68,7 +66,7 @@ public class Next_level extends AppCompatActivity implements View.OnClickListene
 
 
         // Melder nullc - fejl
-        TV_hawaii.setText("Ordet er: " + hentOrd.brugbareOrd);
+       // TV_hawaii.setText("Ordet er: " + hentOrd.brugbareOrd);
        // TV_hawaii.append("\n\nDu har " + logik.getAntalForkerteBogstaver() + " forkerte:" + logik.getBrugteBogstaver());
 
 

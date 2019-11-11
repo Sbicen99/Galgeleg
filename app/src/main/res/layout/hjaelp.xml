@@ -5,13 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Hjaelp"
-    android:background="@android:color/holo_green_light">
+    android:background="@color/brugbarFarve">
 
     <TextView
         android:id="@+id/textV"
-        android:layout_width="253dp"
-        android:layout_height="0dp"
+        android:layout_width="347dp"
+        android:layout_height="407dp"
         android:layout_marginBottom="87dp"
+        android:fontFamily="casual"
+        android:textAlignment="center"
         android:textColor="@android:color/white"
         android:textSize="14sp"
         android:textStyle="italic"
@@ -27,7 +29,8 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="70dp"
         android:layout_marginBottom="48dp"
-        android:background="@android:color/holo_green_dark"
+        android:background="@android:color/black"
+        android:fontFamily="casual"
         android:text="Tilbage"
         android:textColor="@android:color/white"
         android:textStyle="bold|italic"

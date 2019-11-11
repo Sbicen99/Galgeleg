@@ -2,26 +2,20 @@ package com.example.galgeleg;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
-
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import nl.dionsegijn.konfetti.KonfettiView;
-import nl.dionsegijn.konfetti.models.Shape;
-import nl.dionsegijn.konfetti.models.Size;
 
 public class Vundet_Galgespillet extends AppCompatActivity implements View.OnClickListener {
 
     TextView TV1;
-    Button button2; Button button;
+    Button jordklode; Button tilføjKnap;
     TextView tv_score;
     int score = 0;
 
@@ -34,10 +28,9 @@ public class Vundet_Galgespillet extends AppCompatActivity implements View.OnCli
 
         tv_score = findViewById(R.id.tv_score);
 
+        tilføjKnap = findViewById(R.id.tilføjKnap);
 
-        button = findViewById(R.id.button);
-
-        button.setOnClickListener(new View.OnClickListener() {
+        tilføjKnap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -48,30 +41,9 @@ public class Vundet_Galgespillet extends AppCompatActivity implements View.OnCli
 
 
         TV1 = findViewById(R.id.TV1);
-        button2 = findViewById(R.id.button2);
+        jordklode = findViewById(R.id.jordklode);
 
-        button2.setOnClickListener(this);
-
-
-
-        //Spørg - app'en crasher
-
-      /*  KonfettiView konfettiView = findViewById(R.id.viewKonfetti);
-
-
-            konfettiView.build()
-                    .addColors(Color.YELLOW, Color.GREEN, Color.MAGENTA, Color.RED)
-                    .setDirection(0.0, 359.0)
-                    .setSpeed(1f, 5f)
-                    .setFadeOutEnabled(true)
-                    .setTimeToLive(3000L)
-                    .addShapes(Shape.RECT, Shape.CIRCLE)
-                    .addSizes(new Size(12, 5))
-                    .setPosition(-50f, konfettiView.getWidth() + 50f, -50f, -50f)
-                    .streamFor(200, 5000L);
-
-        */
-
+        jordklode.setOnClickListener(this);
 
 
         // Indhenter data fra 'Galge_spillet'-klassen
@@ -97,11 +69,9 @@ public class Vundet_Galgespillet extends AppCompatActivity implements View.OnCli
 
         } else {
 
-
             score = 1;
 
         }
-
 
         tv_score.setText("SCORE: " + score);
 
@@ -120,7 +90,6 @@ public class Vundet_Galgespillet extends AppCompatActivity implements View.OnCli
 
     private void tilføjScore() {
 
-
         SharedPreferences preferences = getSharedPreferences("PREFS", 0);
         SharedPreferences.Editor editor = preferences.edit();
         editor.putInt("lastscore", score);
@@ -137,7 +106,7 @@ public class Vundet_Galgespillet extends AppCompatActivity implements View.OnCli
     @Override
     public void onClick(View view) {
 
-        // Viser en dialogboks
+                //Viser en dialogboks
         AlertDialog.Builder builder = new AlertDialog.Builder(Vundet_Galgespillet.this);
         builder.setMessage("Ønsker du at prøve et nyt level?")
                 .setCancelable(false)
@@ -145,10 +114,9 @@ public class Vundet_Galgespillet extends AppCompatActivity implements View.OnCli
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
 
-                       openActivity();
+                        openActivity();
                     }
                 })
-
 
                 .setNegativeButton("Nej", new DialogInterface.OnClickListener() {
                     @Override
@@ -170,9 +138,7 @@ public class Vundet_Galgespillet extends AppCompatActivity implements View.OnCli
         pbutton.setTextColor(Color.BLACK);
 
 
-        button2.animate().rotation(button2.getRotation()-360*4).start();
-
-
+        jordklode.animate().rotation(jordklode.getRotation()-360*4).start();
     }
 
 

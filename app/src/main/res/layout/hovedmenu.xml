@@ -4,54 +4,49 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/holo_green_light">
+    android:background="@color/brugbarFarve">
 
     <Button
         android:id="@+id/hjælpKnap2"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginEnd="12dp"
-        android:layout_marginBottom="31dp"
+        android:layout_width="387dp"
+        android:layout_height="46dp"
+        android:layout_marginBottom="92dp"
         android:background="@android:color/holo_green_dark"
+        android:fontFamily="casual"
         android:text="Hjælp"
         android:textColor="@android:color/white"
         android:textSize="18sp"
         android:textStyle="bold|italic"
-        app:layout_constraintBottom_toTopOf="@+id/tester"
+        app:layout_constraintBottom_toTopOf="@+id/imageView2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/minKnap1" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/minKnap1"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginEnd="12dp"
-        android:layout_marginBottom="25dp"
+        android:layout_width="387dp"
+        android:layout_height="46dp"
+        android:layout_marginBottom="28dp"
         android:background="@android:color/holo_green_dark"
+        android:fontFamily="casual"
         android:text="Start Spil"
         android:textColor="@android:color/white"
         android:textSize="18sp"
         android:textStyle="bold|italic"
         app:layout_constraintBottom_toTopOf="@+id/hjælpKnap2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="42dp"
-        android:layout_marginBottom="53dp"
+        android:fontFamily="casual"
         android:text="Galgespillet - giv den gas!"
         android:textColor="@android:color/white"
         android:textSize="30sp"
         android:textStyle="bold|italic"
         app:layout_constraintBottom_toTopOf="@+id/minKnap1"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -59,22 +54,11 @@
         android:id="@+id/imageView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="37dp"
+        android:layout_marginBottom="36dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tester"
         app:srcCompat="@drawable/forkert6" />
-
-    <Button
-        android:id="@+id/tester"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="40dp"
-        android:layout_marginBottom="29dp"
-        android:text="Button"
-        app:layout_constraintBottom_toTopOf="@+id/imageView2"
-        app:layout_constraintEnd_toEndOf="@+id/imageView2"
-        app:layout_constraintTop_toBottomOf="@+id/hjælpKnap2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
