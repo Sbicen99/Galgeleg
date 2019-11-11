@@ -11,10 +11,9 @@ import android.widget.TextView;
 
 public class Tabt_galgespillet extends AppCompatActivity implements View.OnClickListener {
 
-    Galge_spillet spillet = new Galge_spillet();
+
     TextView TV_tabt;
     Button prøvigenKnap;
-    Galge_spillogik logik = new Galge_spillogik();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

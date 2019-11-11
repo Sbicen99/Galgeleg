@@ -14,7 +14,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:label">
-        <activity android:name=".Forside" >
+        <activity android:name=".Galgespillet2"></activity>
+        <activity android:name=".Forside">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,7 +23,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".Highscore_spillet" />
-        <activity android:name=".Next_level" />
         <activity android:name=".Tabt_galgespillet" />
         <activity android:name=".Vundet_Galgespillet" />
         <activity android:name=".Hjaelp" />

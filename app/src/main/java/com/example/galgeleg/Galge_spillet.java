@@ -3,7 +3,6 @@ package com.example.galgeleg;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -41,7 +40,7 @@ public class Galge_spillet extends AppCompatActivity implements View.OnClickList
 
 
         TV.setText("Velkommen til galgespillet! " +
-                    "\nKan du gætte ordet: " + logik.getSynligtOrd() + "?" );
+                    "\nKan du gætte ordet: " +  logik.getSynligtOrd() + "?" );
 
 
         prøvKnap.setOnClickListener(this);
@@ -113,6 +112,7 @@ public class Galge_spillet extends AppCompatActivity implements View.OnClickList
 
             case 0:
                 image.setImageResource(R.drawable.galge);
+                break;
 
             case 1:
                 image.setImageResource(R.drawable.forkert1);

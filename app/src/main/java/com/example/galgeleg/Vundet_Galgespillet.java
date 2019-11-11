@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+
 public class Vundet_Galgespillet extends AppCompatActivity implements View.OnClickListener {
 
     TextView TV1;
@@ -53,7 +54,7 @@ public class Vundet_Galgespillet extends AppCompatActivity implements View.OnCli
 
         if (antalForsøg == 0){
 
-            score += 30;
+            score += 45;
 
         } else if (antalForsøg == 1){
 
@@ -102,7 +103,6 @@ public class Vundet_Galgespillet extends AppCompatActivity implements View.OnCli
 
     }
 
-
     @Override
     public void onClick(View view) {
 
@@ -110,7 +110,7 @@ public class Vundet_Galgespillet extends AppCompatActivity implements View.OnCli
         AlertDialog.Builder builder = new AlertDialog.Builder(Vundet_Galgespillet.this);
         builder.setMessage("Ønsker du at prøve et nyt level?")
                 .setCancelable(false)
-                .setPositiveButton("Ja", new DialogInterface.OnClickListener() {
+                .setPositiveButton("Ja, til nye ord!", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
 
@@ -118,7 +118,7 @@ public class Vundet_Galgespillet extends AppCompatActivity implements View.OnCli
                     }
                 })
 
-                .setNegativeButton("Nej", new DialogInterface.OnClickListener() {
+                .setNegativeButton("Nej, prøv igen!", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
 
@@ -137,18 +137,15 @@ public class Vundet_Galgespillet extends AppCompatActivity implements View.OnCli
         Button pbutton = alert.getButton(DialogInterface.BUTTON_POSITIVE);
         pbutton.setTextColor(Color.BLACK);
 
-
         jordklode.animate().rotation(jordklode.getRotation()-360*4).start();
     }
 
-
     private void openActivity() {
 
-        Intent intent = new Intent(this, Next_level.class);
+        Intent intent = new Intent(this, Galgespillet2.class);
         startActivity(intent);
 
     }
-
 
     private void openActivity1() {
 

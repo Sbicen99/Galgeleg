@@ -4,8 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 public class Forside extends AppCompatActivity implements View.OnClickListener {
 
@@ -69,8 +71,19 @@ public class Forside extends AppCompatActivity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
 
-        Intent intent = new Intent(this, Galge_spillet.class);
-        startActivity(intent);
+        Toast.makeText(Forside.this, "Starter spillet...", //Viser en besked
+                Toast.LENGTH_SHORT).show();
+
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+
+                Intent i = new Intent(Forside.this, Galge_spillet.class);
+                startActivity(i);
+            }
+        }, 2000); //sætter et delay på 2 sek.
+
 
     }
 }
