@@ -12,6 +12,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import nl.dionsegijn.konfetti.KonfettiView;
+import nl.dionsegijn.konfetti.models.Shape;
+import nl.dionsegijn.konfetti.models.Size;
+
 
 public class Vundet_Galgespillet extends AppCompatActivity implements View.OnClickListener {
 
@@ -25,6 +29,7 @@ public class Vundet_Galgespillet extends AppCompatActivity implements View.OnCli
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.vundet__galgespillet);
+
 
 
         tv_score = findViewById(R.id.tv_score);
@@ -86,6 +91,19 @@ public class Vundet_Galgespillet extends AppCompatActivity implements View.OnCli
         //Afspiller en vinderlyd, når aktiviteten begynder
         MediaPlayer mp = MediaPlayer.create(this,R.raw.vundet);
         mp.start();
+
+
+        KonfettiView konfettiView = findViewById(R.id.viewKonfetti);
+        konfettiView.build()
+                .addColors(Color.WHITE, Color.GREEN, Color.BLACK)
+                .setDirection(0.0, 359.0)
+                .setSpeed(1f, 5f)
+                .setFadeOutEnabled(true)
+                .setTimeToLive(2000L)
+                .addShapes(Shape.RECT, Shape.CIRCLE)
+                .addSizes(new Size(12, 5f))
+                .setPosition(640f, (float) konfettiView.getWidth() + 50f, 0f, -150f)
+                .stream(150, 5000L);
 
     }
 
