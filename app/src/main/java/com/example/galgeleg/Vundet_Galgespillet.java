@@ -93,6 +93,9 @@ public class Vundet_Galgespillet extends AppCompatActivity implements View.OnCli
         mp.start();
 
 
+        //Konfetti
+        //Koden er fundet her: https://android-arsenal.com/details/1/5884
+
         KonfettiView konfettiView = findViewById(R.id.viewKonfetti);
         konfettiView.build()
                 .addColors(Color.WHITE, Color.GREEN, Color.BLACK)
@@ -128,7 +131,7 @@ public class Vundet_Galgespillet extends AppCompatActivity implements View.OnCli
         AlertDialog.Builder builder = new AlertDialog.Builder(Vundet_Galgespillet.this);
         builder.setMessage("Ønsker du at prøve et nyt level?")
                 .setCancelable(false)
-                .setPositiveButton("Ja, til nye ord!", new DialogInterface.OnClickListener() {
+                .setPositiveButton("Ja!", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
 
@@ -136,7 +139,7 @@ public class Vundet_Galgespillet extends AppCompatActivity implements View.OnCli
                     }
                 })
 
-                .setNegativeButton("Nej, prøv igen!", new DialogInterface.OnClickListener() {
+                .setNegativeButton("Nej!", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
 
@@ -162,6 +165,7 @@ public class Vundet_Galgespillet extends AppCompatActivity implements View.OnCli
 
         Intent intent = new Intent(this, Galgespillet2.class);
         startActivity(intent);
+        finish();
 
     }
 

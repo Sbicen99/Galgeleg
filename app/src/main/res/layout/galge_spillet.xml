@@ -9,11 +9,11 @@
 
     <Button
         android:id="@+id/prøvKnap"
-        android:layout_width="381dp"
-        android:layout_height="51dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginBottom="20dp"
+        android:layout_width="356dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="24dp"
         android:background="@android:color/black"
         android:fontFamily="casual"
         android:text="Prøv"
@@ -21,7 +21,7 @@
         android:textStyle="bold|italic"
         app:layout_constraintBottom_toTopOf="@+id/image"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.485"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView

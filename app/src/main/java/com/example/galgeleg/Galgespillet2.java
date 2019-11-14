@@ -39,6 +39,15 @@ public class Galgespillet2 extends AppCompatActivity implements View.OnClickList
 
         prøv_galgespil2.setOnClickListener(this);
 
+        prøvIgen_galgespil2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                genstartSpil();
+
+            }
+        });
         // får ord fra DR
         asyncTask = new AsyncTask() {
             @Override
@@ -66,6 +75,13 @@ public class Galgespillet2 extends AppCompatActivity implements View.OnClickList
 
 
 
+
+    }
+
+    private void genstartSpil() {
+
+        Intent intent = new Intent(this, Galgespillet2.class);
+        startActivity(intent);
 
     }
 
