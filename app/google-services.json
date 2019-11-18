@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "861006383123",
+    "firebase_url": "https://galgespillet.firebaseio.com",
+    "project_id": "galgespillet",
+    "storage_bucket": "galgespillet.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:861006383123:android:a505a397bbf357edeed7e6",
+        "android_client_info": {
+          "package_name": "com.example.galgeleg"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "861006383123-oe31p9oq2u0mghb710nfqqsnme4tb1mj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.galgeleg",
+            "certificate_hash": "ddd797a7b1ec79f1d4ddcdff67afa1a29474dd26"
+          }
+        },
+        {
+          "client_id": "861006383123-q460o2o6lljdmcsvk7csnsrkou0r8bap.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDj4L2k2LieHjNCeUv90YGRhmgurXcsN_g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "861006383123-q460o2o6lljdmcsvk7csnsrkou0r8bap.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -17,7 +17,7 @@ import android.widget.TextView;
 public class Galge_spillet extends AppCompatActivity implements View.OnClickListener {
 
     Galge_spillogik logik = new Galge_spillogik();
-    Button prøvKnap; Button prøvigenKnap;
+    Button prøvKnap, prøvigenKnap;
     TextView TV;
     EditText ET;
     ImageView image;

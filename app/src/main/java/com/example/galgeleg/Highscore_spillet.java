@@ -15,10 +15,8 @@ import java.util.ArrayList;
 public class Highscore_spillet extends AppCompatActivity implements View.OnClickListener {
 
     ImageButton imageButton_highscore;
-    ListView listview1;
-    ListView listview2;
-    int sidsteScore;
-    int best1, best2, best3, best4, best5;
+    ListView listview1, listview2;
+    int sidsteScore, best1, best2, best3, best4, best5;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,6 +64,8 @@ public class Highscore_spillet extends AppCompatActivity implements View.OnClick
             editor.putInt("best4", best4);
             editor.apply();
 
+
+
         }
         if (sidsteScore > best3) {
 
@@ -78,6 +78,8 @@ public class Highscore_spillet extends AppCompatActivity implements View.OnClick
             editor.putInt("best3", best3);
             editor.apply();
 
+
+
         }
 
         if (sidsteScore > best2) {
@@ -85,6 +87,7 @@ public class Highscore_spillet extends AppCompatActivity implements View.OnClick
             int s2 = best2;
             best2 = sidsteScore;
             best3 = s2;
+
 
             SharedPreferences.Editor editor = preferences.edit();
             editor.putInt("best3", best3);
@@ -104,6 +107,8 @@ public class Highscore_spillet extends AppCompatActivity implements View.OnClick
             editor.putInt("best2", best2);
             editor.putInt("best1", best1);
             editor.apply();
+
+
 
         }
 
@@ -135,6 +140,9 @@ public class Highscore_spillet extends AppCompatActivity implements View.OnClick
 
         listview1.setAdapter(arrayAdapter);
 
+
+        arrayAdapter.clear();
+
     }
 
     @Override
@@ -143,6 +151,7 @@ public class Highscore_spillet extends AppCompatActivity implements View.OnClick
         Intent intent = new Intent(this, Forside.class);
         startActivity(intent);
         finish();
+
 
     }
 }

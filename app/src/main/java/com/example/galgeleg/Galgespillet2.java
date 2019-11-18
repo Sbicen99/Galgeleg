@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
@@ -13,14 +12,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Galgespillet2 extends AppCompatActivity implements View.OnClickListener {
 
     Galge_spillogik logik = new Galge_spillogik();
     TextView TV_galgespil2;
     EditText editText_galgespil2;
-    Button prøv_galgespil2;
-    Button prøvIgen_galgespil2;
+    Button prøv_galgespil2, prøvIgen_galgespil2;
     ImageView imageView_galgespil2;
     AsyncTask asyncTask;
 
@@ -48,7 +47,15 @@ public class Galgespillet2 extends AppCompatActivity implements View.OnClickList
 
             }
         });
-        // får ord fra DR
+
+
+        Toast.makeText(Galgespillet2.this, "Henter ord fra DR...", //Viser en besked, inden ordet hentes fra DR
+                Toast.LENGTH_SHORT).show();
+
+
+
+
+        // henter ord fra DR
         asyncTask = new AsyncTask() {
             @Override
             protected Object doInBackground(Object[] objects) {
@@ -76,12 +83,14 @@ public class Galgespillet2 extends AppCompatActivity implements View.OnClickList
 
 
 
+
     }
 
     private void genstartSpil() {
 
         Intent intent = new Intent(this, Galgespillet2.class);
         startActivity(intent);
+        finish();
 
     }
 

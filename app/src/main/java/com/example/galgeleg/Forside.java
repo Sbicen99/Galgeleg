@@ -11,9 +11,7 @@ import android.widget.Toast;
 
 public class Forside extends AppCompatActivity implements View.OnClickListener {
 
-    ImageView LogI;
-    ImageView Highscore;
-    ImageView Hjælp;
+    ImageView LogI, Highscore, Hjælp;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

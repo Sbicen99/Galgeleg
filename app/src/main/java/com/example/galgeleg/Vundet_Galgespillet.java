@@ -9,7 +9,10 @@ import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import nl.dionsegijn.konfetti.KonfettiView;
@@ -19,10 +22,10 @@ import nl.dionsegijn.konfetti.models.Size;
 
 public class Vundet_Galgespillet extends AppCompatActivity implements View.OnClickListener {
 
-    TextView TV1;
-    Button jordklode; Button tilføjKnap;
-    TextView tv_score;
-    int score = 0;
+    TextView TV1, tv_score;
+    Button jordklode, tilføjKnap;
+    ImageView imageView6;
+    int score = 5;
 
 
     @Override
@@ -31,6 +34,7 @@ public class Vundet_Galgespillet extends AppCompatActivity implements View.OnCli
         setContentView(R.layout.vundet__galgespillet);
 
 
+        imageView6 = findViewById(R.id.imageView6);
 
         tv_score = findViewById(R.id.tv_score);
 
@@ -59,19 +63,19 @@ public class Vundet_Galgespillet extends AppCompatActivity implements View.OnCli
 
         if (antalForsøg == 0){
 
-            score += 45;
+            score *= 4;
 
         } else if (antalForsøg == 1){
 
-            score += 15;
+            score *= 3;
 
         } else if (antalForsøg == 2){
 
-            score += 10;
+            score *= 2;
 
         } else if (antalForsøg == 3){
 
-            score += 5;
+            score *= 1;
 
         } else {
 
@@ -108,6 +112,7 @@ public class Vundet_Galgespillet extends AppCompatActivity implements View.OnCli
                 .setPosition(640f, (float) konfettiView.getWidth() + 50f, 0f, -150f)
                 .stream(150, 5000L);
 
+
     }
 
     private void tilføjScore() {
@@ -129,7 +134,7 @@ public class Vundet_Galgespillet extends AppCompatActivity implements View.OnCli
 
                 //Viser en dialogboks
         AlertDialog.Builder builder = new AlertDialog.Builder(Vundet_Galgespillet.this);
-        builder.setMessage("Ønsker du at prøve et nyt level?")
+        builder.setMessage("Ønsker du at spille med ord hentet fra DR?")
                 .setCancelable(false)
                 .setPositiveButton("Ja!", new DialogInterface.OnClickListener() {
                     @Override
@@ -158,7 +163,7 @@ public class Vundet_Galgespillet extends AppCompatActivity implements View.OnCli
         Button pbutton = alert.getButton(DialogInterface.BUTTON_POSITIVE);
         pbutton.setTextColor(Color.BLACK);
 
-        jordklode.animate().rotation(jordklode.getRotation()-360*4).start();
+        jordklode.animate().rotation(jordklode.getRotation()-360).start();
     }
 
     private void openActivity() {
