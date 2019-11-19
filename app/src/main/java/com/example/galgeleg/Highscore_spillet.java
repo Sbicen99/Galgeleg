@@ -8,13 +8,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.ListView;
 import java.util.ArrayList;
 
 
 public class Highscore_spillet extends AppCompatActivity implements View.OnClickListener {
 
-    ImageButton imageButton_highscore;
+    ImageView tilbage_K;
     ListView listview1, listview2;
     int sidsteScore, best1, best2, best3, best4, best5;
 
@@ -24,9 +25,9 @@ public class Highscore_spillet extends AppCompatActivity implements View.OnClick
         setContentView(R.layout.highscore_spillet);
 
 
-        imageButton_highscore = findViewById(R.id.imageButton_highscore);
+        tilbage_K = findViewById(R.id.tilbage_K);
 
-        imageButton_highscore.setOnClickListener(this);
+        tilbage_K.setOnClickListener(this);
 
 
         listview1 = findViewById(R.id.listview1);
@@ -140,15 +141,12 @@ public class Highscore_spillet extends AppCompatActivity implements View.OnClick
 
         listview1.setAdapter(arrayAdapter);
 
-
-        arrayAdapter.clear();
-
     }
 
     @Override
     public void onClick(View v) {
 
-        Intent intent = new Intent(this, Forside.class);
+        Intent intent = new Intent(this, Galgespillet2.class);
         startActivity(intent);
         finish();
 

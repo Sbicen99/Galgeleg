@@ -60,10 +60,12 @@ public class Galgespillet2 extends AppCompatActivity implements View.OnClickList
             @Override
             protected Object doInBackground(Object[] objects) {
                 try {
+                    Thread.sleep(1000);
                     logik.hentOrdFraDr();
                     return "Ord hentet fra DR!";
 
                 } catch (Exception e) {
+                    Thread.currentThread().interrupt();
                     e.printStackTrace();
                     return "Ordet blev ikke hentet!" + e;
 
@@ -81,8 +83,7 @@ public class Galgespillet2 extends AppCompatActivity implements View.OnClickList
 
 
 
-
-
+        
 
     }
 
@@ -103,12 +104,13 @@ public class Galgespillet2 extends AppCompatActivity implements View.OnClickList
             editText_galgespil2.setError("Skriv præcis ét bogstav!");
             return;
         }
+
         logik.gætBogstav(bogstav);
         editText_galgespil2.setText("");
         editText_galgespil2.setError(null);
 
 
-        // opdaterer skærmen
+        // metode til at opdatere skærmen
         updateScreen();
 
 
