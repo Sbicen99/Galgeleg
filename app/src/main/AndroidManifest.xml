@@ -14,21 +14,20 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:label">
-        <activity android:name=".Galgespillet2"></activity>
-        <activity android:name=".Forside">
+        <activity android:name=".LoadingSide" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Highscore_spillet" />
+        <activity android:name=".Oversigt" />
+        <activity android:name=".Logik.Highscore" />
+        <activity android:name=".Galge_spillet" />
         <activity android:name=".Tabt_galgespillet" />
         <activity android:name=".Vundet_Galgespillet" />
         <activity android:name=".Hjaelp" />
-        <activity android:name=".Galge_spillet" />
-        <activity android:name=".Galge_spillogik" />
-        <activity android:name=".Hovedmenu" />
+        <activity android:name=".Spillets_Testrunde" />
+        <activity android:name=".Logik.Logik" />
 
         <meta-data
             android:name="preloaded_fonts"

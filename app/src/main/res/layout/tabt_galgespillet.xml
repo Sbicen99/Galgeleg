@@ -7,42 +7,50 @@
     android:background="@color/brugbarFarve"
     tools:context=".Tabt_galgespillet">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="271dp"
-        android:layout_height="490dp"
-        android:layout_marginEnd="60dp"
-        android:layout_marginBottom="28dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/sadface" />
 
     <TextView
         android:id="@+id/TV_tabt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="120dp"
+        android:layout_marginBottom="44dp"
         android:textColor="@android:color/white"
         android:textSize="18sp"
         android:textStyle="italic"
+        app:layout_constraintBottom_toTopOf="@+id/lottieAnimationView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.294"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="0.148"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/prøvigenKnap"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="49dp"
-        android:layout_marginEnd="36dp"
-        android:layout_marginBottom="116dp"
-        android:background="@android:color/black"
+        android:layout_width="106dp"
+        android:layout_height="49dp"
+        android:layout_marginBottom="44dp"
+        android:background="@drawable/runde_knapper"
         android:fontFamily="casual"
         android:text="Prøv igen"
         android:textColor="@android:color/white"
-        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        app:layout_constraintBottom_toTopOf="@+id/TV_tabt"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.947"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.255" />
+        app:layout_constraintVertical_bias="1.0" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottieAnimationView"
+        android:layout_width="306dp"
+        android:layout_height="329dp"
+        android:layout_marginStart="57dp"
+        android:layout_marginEnd="61dp"
+        android:layout_marginBottom="80dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/crying" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

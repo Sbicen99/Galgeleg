@@ -10,8 +10,9 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.galgeleg.Logik.Highscore;
 
 import nl.dionsegijn.konfetti.KonfettiView;
 import nl.dionsegijn.konfetti.models.Shape;
@@ -21,9 +22,8 @@ import nl.dionsegijn.konfetti.models.Size;
 public class Vundet_Galgespillet extends AppCompatActivity implements View.OnClickListener {
 
     TextView TV1, tv_score;
-    Button jordklode, tilføjKnap;
-    ImageView imageView6;
-    int score = 20;
+    Button nextLevel, gemKnap;
+    int score = 100;
 
 
     @Override
@@ -32,61 +32,76 @@ public class Vundet_Galgespillet extends AppCompatActivity implements View.OnCli
         setContentView(R.layout.vundet__galgespillet);
 
 
-        imageView6 = findViewById(R.id.imageView6);
-
         tv_score = findViewById(R.id.tv_score);
 
-        tilføjKnap = findViewById(R.id.tilføjKnap);
+        gemKnap = findViewById(R.id.gemKnap);
 
-        tilføjKnap.setOnClickListener(new View.OnClickListener() {
+        gemKnap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                tilføjScore();
+               tilføjScore();
 
             }
         });
 
 
         TV1 = findViewById(R.id.TV1);
-        jordklode = findViewById(R.id.jordklode);
+        nextLevel = findViewById(R.id.nextLevel);
 
-        jordklode.setOnClickListener(this);
+        nextLevel.setOnClickListener(this);
 
 
-        // Indhenter data fra 'Galge_spillet'-klassen
+        // Indhenter data fra 'Spillets_Testrunde'-klassen
         Intent intent = getIntent();
         final int antalForsøg = intent.getIntExtra("antal forsøg", 0);
 
 
+
+
         if (antalForsøg == 0){
 
-            score *= 4;
+            score -= 0;
 
         } else if (antalForsøg == 1){
 
-            score *= 3;
+            score -= 10;
 
         } else if (antalForsøg == 2){
 
-            score *= 2;
+            score -= 20;
 
         } else if (antalForsøg == 3){
 
-            score *= 1;
+            score -= 30;
+
+        } else if (antalForsøg == 4) {
+
+            score -= 40;
+
+        } else if (antalForsøg == 5) {
+
+            score -= 50;
+
+        } else if (antalForsøg == 60) {
+
+            score -=60;
 
         } else {
 
-            score = 1;
+            score = 0;
 
         }
+
+
 
         tv_score.setText("SCORE: " + score);
 
 
         TV1.setText("TILLYKKE!!" +
-                "\nDu er klar til at prøve nye kræfter af!" + "\nTryk på globussen, og oplev et nyt level"
+                "\nDu er klar til at prøve igen!" + "\nTryk på pilen, og prøv!"
                 + "\n\n- Du brugte " + antalForsøg + " forsøg, inden du gættede ordet!");
+
 
 
 
@@ -95,9 +110,19 @@ public class Vundet_Galgespillet extends AppCompatActivity implements View.OnCli
         mp.start();
 
 
-        //Konfetti
-        //Koden er fundet her: https://android-arsenal.com/details/1/5884
+        /*
+        Konfetti:
+        Koden er fundet her: https://android-arsenal.com/details/1/5884
 
+        Animationer:
+        https://lottiefiles.com/677-trophy
+        https://lottiefiles.com/342-success
+        https://lottiefiles.com/11864-crying
+
+        Hjælp til opsætning:
+        https://www.youtube.com/watch?v=T4v72xJqNpQ
+
+         */
         KonfettiView konfettiView = findViewById(R.id.viewKonfetti);
         konfettiView.build()
                 .addColors(Color.WHITE, Color.GREEN, Color.BLACK)
@@ -113,6 +138,7 @@ public class Vundet_Galgespillet extends AppCompatActivity implements View.OnCli
 
     }
 
+
     private void tilføjScore() {
 
         SharedPreferences preferences = getSharedPreferences("PREFS", 0);
@@ -120,10 +146,8 @@ public class Vundet_Galgespillet extends AppCompatActivity implements View.OnCli
         editor.putInt("lastscore", score);
         editor.apply();
 
-
-        Intent intent = new Intent(getApplicationContext(), Highscore_spillet.class);
+        Intent intent = new Intent(this, Highscore.class);
         startActivity(intent);
-        finish();
 
     }
 
@@ -161,12 +185,11 @@ public class Vundet_Galgespillet extends AppCompatActivity implements View.OnCli
         Button pbutton = alert.getButton(DialogInterface.BUTTON_POSITIVE);
         pbutton.setTextColor(Color.BLACK);
 
-        jordklode.animate().rotation(jordklode.getRotation()-360).start();
     }
 
     private void openActivity() {
 
-        Intent intent = new Intent(this, Galgespillet2.class);
+        Intent intent = new Intent(this, Galge_spillet.class);
         startActivity(intent);
         finish();
 
@@ -174,8 +197,8 @@ public class Vundet_Galgespillet extends AppCompatActivity implements View.OnCli
 
     private void openActivity1() {
 
-        Intent in = new Intent(this, Galge_spillet.class);
-        startActivity(in);
+        Intent intent = new Intent(this, Spillets_Testrunde.class);
+        startActivity(intent);
 
     }
 }

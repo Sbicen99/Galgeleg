@@ -24,8 +24,7 @@ public class Hjaelp extends AppCompatActivity implements View.OnClickListener {
         textV.setText("- Du skal kun skrive ét bogstav" +
                 "\n- Du må ikke benytte CAPS LOCK" + "\n- Når du ser hele figuren og hører lyden, er spillet færdigt " + "\n- Du må ikke benytte tal" +
                 "\n\n\nHints: der er 9 ord i galgespillet, som har at gøre med: " +
-                "\n\n- Computer Science" + "\n- Transportmidler/transport" + "\n- Dyr" + "\n- Tal" + "\n\n\nMotivation/næste levels:" +
-                "\n- Du kan komme til et nyt level");
+                "\n\n- Computer Science" + "\n- Transportmidler/transport" + "\n- Dyr");
 
 
         tilbageKnap = findViewById(R.id.tilbageKnap);
@@ -40,9 +39,9 @@ public class Hjaelp extends AppCompatActivity implements View.OnClickListener {
 
         // Viser en dialogboks
         AlertDialog.Builder builder = new AlertDialog.Builder(Hjaelp.this);
-        builder.setMessage("Er du sikker på, at du vil gå tilbage?")
+        builder.setMessage("Er du bedre udrustet nu?")
                 .setCancelable(false)
-                .setPositiveButton("Ja", new DialogInterface.OnClickListener() {
+                .setPositiveButton("Ja!", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
 
@@ -50,7 +49,7 @@ public class Hjaelp extends AppCompatActivity implements View.OnClickListener {
                     }
                 })
 
-                .setNegativeButton("Nej", new DialogInterface.OnClickListener() {
+                .setNegativeButton("Nej!", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
 
@@ -81,7 +80,7 @@ public class Hjaelp extends AppCompatActivity implements View.OnClickListener {
 
     private void positiv() {
 
-        Intent intent = new Intent(this, Hovedmenu.class);
+        Intent intent = new Intent(this, Oversigt.class);
         startActivity(intent);
         finish();
 
