@@ -1,4 +1,4 @@
-package com.example.galgeleg.Logik;
+package com.example.galgeleg;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,19 +15,13 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 
-import com.example.galgeleg.Galge_spillet;
-import com.example.galgeleg.Oversigt;
-import com.example.galgeleg.R;
-import com.example.galgeleg.Spillets_Testrunde;
-import com.example.galgeleg.Vundet_Galgespillet;
-
 import java.util.ArrayList;
 
 
 public class Highscore extends AppCompatActivity implements View.OnClickListener {
 
-    Button nulstil_Knap, tilbage_Knap;
-    ListView listview_1, listview_2;
+    private Button nulstil_Knap, tilbage_Knap;
+    private ListView listview_1, listview_2;
     int sidsteScore, best1, best2, best3, best4, best5;
 
     @Override

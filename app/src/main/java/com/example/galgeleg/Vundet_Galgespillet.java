@@ -12,8 +12,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.galgeleg.Logik.Highscore;
-
 import nl.dionsegijn.konfetti.KonfettiView;
 import nl.dionsegijn.konfetti.models.Shape;
 import nl.dionsegijn.konfetti.models.Size;
@@ -21,8 +19,8 @@ import nl.dionsegijn.konfetti.models.Size;
 
 public class Vundet_Galgespillet extends AppCompatActivity implements View.OnClickListener {
 
-    TextView TV1, tv_score;
-    Button nextLevel, gemKnap;
+    private TextView TV1, tv_score;
+    private Button nextLevel, gemKnap;
     int score = 100;
 
 
@@ -123,6 +121,7 @@ public class Vundet_Galgespillet extends AppCompatActivity implements View.OnCli
         https://www.youtube.com/watch?v=T4v72xJqNpQ
 
          */
+
         KonfettiView konfettiView = findViewById(R.id.viewKonfetti);
         konfettiView.build()
                 .addColors(Color.WHITE, Color.GREEN, Color.BLACK)

@@ -7,11 +7,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.galgeleg.Logik.Highscore;
-
 public class Oversigt extends AppCompatActivity implements View.OnClickListener {
 
-    Button startSpillet_knap, Hjælp_Knap, Highscore_knap;
+    private Button startSpillet_knap, Hjælp_Knap, Highscore_knap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

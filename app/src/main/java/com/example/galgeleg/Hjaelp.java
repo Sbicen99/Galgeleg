@@ -13,8 +13,10 @@ import android.widget.TextView;
 
 public class Hjaelp extends AppCompatActivity implements View.OnClickListener {
 
-    Button tilbageKnap;
-    TextView textV;
+    private Button tilbageKnap;
+    private TextView textV;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

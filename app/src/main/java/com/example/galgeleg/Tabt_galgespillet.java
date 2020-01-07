@@ -12,13 +12,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.galgeleg.Logik.Highscore;
-
 public class Tabt_galgespillet extends AppCompatActivity implements View.OnClickListener {
 
 
-    TextView TV_tabt;
-    Button prøvigenKnap;
+    private TextView TV_tabt;
+    private Button prøvigenKnap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

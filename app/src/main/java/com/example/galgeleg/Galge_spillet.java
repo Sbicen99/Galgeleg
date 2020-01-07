@@ -20,10 +20,10 @@ import com.example.galgeleg.Logik.Logik;
 public class Galge_spillet extends AppCompatActivity implements View.OnClickListener {
 
     Logik logik = new Logik();
-    TextView TV_galgespil2;
-    EditText editText_galgespil2;
-    Button prøv_galgespil2, prøvIgen_galgespil2;
-    ImageView imageView_galgespil2;
+    private TextView TV_galgespil2;
+    private EditText editText_galgespil2;
+    private Button prøv_galgespil2, prøvIgen_galgespil2;
+    private ImageView imageView_galgespil2;
     AsyncTask asyncTask;
 
 
@@ -84,9 +84,6 @@ public class Galge_spillet extends AppCompatActivity implements View.OnClickList
                 logik.logStatus();
             }
         }.execute();
-
-
-        
 
     }
 

@@ -21,7 +21,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".Oversigt" />
-        <activity android:name=".Logik.Highscore" />
+        <activity android:name=".Highscore" />
         <activity android:name=".Galge_spillet" />
         <activity android:name=".Tabt_galgespillet" />
         <activity android:name=".Vundet_Galgespillet" />

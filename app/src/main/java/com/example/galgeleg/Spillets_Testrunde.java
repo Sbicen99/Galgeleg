@@ -18,10 +18,10 @@ import com.example.galgeleg.Logik.Logik;
 public class Spillets_Testrunde extends AppCompatActivity implements View.OnClickListener {
 
     Logik logik = new Logik();
-    Button prøvKnap, prøvigenKnap;
-    TextView TV;
-    EditText ET;
-    ImageView image;
+    private Button prøvKnap, prøvigenKnap;
+    private TextView TV;
+    private EditText ET;
+    private ImageView image;
 
 
     @Override
