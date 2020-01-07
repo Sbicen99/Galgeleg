@@ -1,4 +1,4 @@
-package com.example.galgeleg;
+package com.example.galgeleg.Logik;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,10 +15,15 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 
+import com.example.galgeleg.Hjælpeklasser.Oversigt;
+import com.example.galgeleg.R;
+import com.example.galgeleg.Singleplayer.GalgeSpillet;
+import com.example.galgeleg.Singleplayer.Testrunde;
+
 import java.util.ArrayList;
 
 
-public class Highscore extends AppCompatActivity implements View.OnClickListener {
+public class Highscore_logik extends AppCompatActivity implements View.OnClickListener {
 
     private Button nulstil_Knap, tilbage_Knap;
     private ListView listview_1, listview_2;
@@ -166,7 +171,7 @@ public class Highscore extends AppCompatActivity implements View.OnClickListener
     private void tilbage() {
 
             //Viser en dialogboks
-            AlertDialog.Builder builder = new AlertDialog.Builder(Highscore.this);
+            AlertDialog.Builder builder = new AlertDialog.Builder(Highscore_logik.this);
             builder.setMessage("Ønsker du at prøve testrunden igen?")
                     .setCancelable(false)
                     .setPositiveButton("Ja!", new DialogInterface.OnClickListener() {
@@ -201,14 +206,14 @@ public class Highscore extends AppCompatActivity implements View.OnClickListener
 
     private void openActivity() {
 
-        Intent intent = new Intent(this, Spillets_Testrunde.class);
+        Intent intent = new Intent(this, Testrunde.class);
         startActivity(intent);
 
     }
 
     private void openActivity1() {
 
-        Intent intent = new Intent(this, Galge_spillet.class);
+        Intent intent = new Intent(this, GalgeSpillet.class);
         startActivity(intent);
 
     }
@@ -226,7 +231,7 @@ public class Highscore extends AppCompatActivity implements View.OnClickListener
 
             @Override
             public void run() {
-                startActivity(new Intent(Highscore.this, Oversigt.class));
+                startActivity(new Intent(Highscore_logik.this, Oversigt.class));
                 finish();
 
             }

@@ -1,5 +1,7 @@
 package com.example.galgeleg.Logik;
 
+import com.example.galgeleg.Multiplayer.OrdDatabase;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -10,10 +12,13 @@ import java.util.HashSet;
 import java.util.Random;
 
 public class Logik {
+
+    OrdDatabase ordDatabase = new OrdDatabase();
     private ArrayList<String> muligeOrd = new ArrayList<String>();
     private String ordet;
     private ArrayList<String> brugteBogstaver = new ArrayList<String>();
     private String synligtOrd;
+    private String synligtOrd_spil3;
     private int antalForkerteBogstaver;
     private boolean sidsteBogstavVarKorrekt;
     private boolean spilletErVundet;
@@ -26,6 +31,10 @@ public class Logik {
 
     public String getSynligtOrd() {
         return synligtOrd;
+    }
+
+    public String getSynligtOrd_spil3() {
+        return synligtOrd_spil3;
     }
 
     public String getOrdet() {
@@ -89,6 +98,57 @@ public class Logik {
         }
     }
 
+
+
+
+
+    //Ændret logikken - kan nu bruges i "multiplayer"
+    private void opdaterSynligtOrdÆndret() {
+        synligtOrd_spil3 = " ";
+        spilletErVundet = true;
+        for (int n = 0; n < ordDatabase.valgtord.length(); n++) {
+            String bogstav = ordDatabase.valgtord.substring(n, n + 1);
+            if (brugteBogstaver.contains(bogstav)) {
+                synligtOrd_spil3 = synligtOrd_spil3 + bogstav;
+            } else {
+                synligtOrd_spil3 = synligtOrd_spil3 + "*";
+                spilletErVundet = false;
+            }
+        }
+    }
+
+
+
+
+    //Ændret logikken - kan nu bruges i "multiplayer"
+    public void gætBogstavÆndret(String bogstav) {
+        if (bogstav.length() != 1) return;
+        System.out.println("Der gættes på bogstavet: " + bogstav);
+        if (brugteBogstaver.contains(bogstav)) return;
+        if (spilletErVundet || spilletErTabt) return;
+
+        brugteBogstaver.add(bogstav);
+
+        if (ordDatabase.valgtord.contains(bogstav)) {
+            sidsteBogstavVarKorrekt = true;
+            System.out.println("Bogstavet var korrekt: " + bogstav);
+        } else {
+            // Vi gættede på et bogstav der ikke var i ordet.
+            sidsteBogstavVarKorrekt = false;
+            System.out.println("Bogstavet var IKKE korrekt: " + bogstav);
+            antalForkerteBogstaver = antalForkerteBogstaver + 1;
+            if (antalForkerteBogstaver > 6) {
+                spilletErTabt = true;
+            }
+        }
+        opdaterSynligtOrdÆndret();
+    }
+
+
+
+
+
+
     public void gætBogstav(String bogstav) {
         if (bogstav.length() != 1) return;
         System.out.println("Der gættes på bogstavet: " + bogstav);
@@ -111,6 +171,8 @@ public class Logik {
         }
         opdaterSynligtOrd();
     }
+
+
 
     public void logStatus() {
         System.out.println("---------- ");

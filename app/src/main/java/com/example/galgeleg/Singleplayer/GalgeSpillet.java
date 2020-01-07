@@ -1,4 +1,4 @@
-package com.example.galgeleg;
+package com.example.galgeleg.Singleplayer;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -15,9 +15,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.galgeleg.Logik.Logik;
+import com.example.galgeleg.R;
+import com.example.galgeleg.SpilletsAfslutning.Tabt_galgespillet;
+import com.example.galgeleg.SpilletsAfslutning.Vundet_Galgespillet;
 
 
-public class Galge_spillet extends AppCompatActivity implements View.OnClickListener {
+public class GalgeSpillet extends AppCompatActivity implements View.OnClickListener {
 
     Logik logik = new Logik();
     private TextView TV_galgespil2;
@@ -53,7 +56,7 @@ public class Galge_spillet extends AppCompatActivity implements View.OnClickList
         });
 
 
-        Toast.makeText(Galge_spillet.this, "Henter ord fra DR...", //Viser en besked, inden ordet hentes fra DR
+        Toast.makeText(GalgeSpillet.this, "Henter ord fra DR...", //Viser en besked, inden ordet hentes fra DR
                 Toast.LENGTH_SHORT).show();
 
 
@@ -89,7 +92,7 @@ public class Galge_spillet extends AppCompatActivity implements View.OnClickList
 
     private void genstartSpil() {
 
-        Intent intent = new Intent(this, Galge_spillet.class);
+        Intent intent = new Intent(this, GalgeSpillet.class);
         startActivity(intent);
         finish();
 

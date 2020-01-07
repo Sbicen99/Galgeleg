@@ -1,4 +1,4 @@
-package com.example.galgeleg;
+package com.example.galgeleg.Singleplayer;
 
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,9 +13,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.galgeleg.Logik.Logik;
+import com.example.galgeleg.R;
+import com.example.galgeleg.SpilletsAfslutning.Tabt_galgespillet;
+import com.example.galgeleg.SpilletsAfslutning.Vundet_Galgespillet;
 
 
-public class Spillets_Testrunde extends AppCompatActivity implements View.OnClickListener {
+public class Testrunde extends AppCompatActivity implements View.OnClickListener {
 
     Logik logik = new Logik();
     private Button prøvKnap, prøvigenKnap;

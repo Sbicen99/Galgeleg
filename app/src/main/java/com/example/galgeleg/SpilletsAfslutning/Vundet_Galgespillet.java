@@ -1,4 +1,4 @@
-package com.example.galgeleg;
+package com.example.galgeleg.SpilletsAfslutning;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,6 +11,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.example.galgeleg.Logik.Highscore_logik;
+import com.example.galgeleg.R;
+import com.example.galgeleg.Singleplayer.GalgeSpillet;
+import com.example.galgeleg.Singleplayer.Testrunde;
 
 import nl.dionsegijn.konfetti.KonfettiView;
 import nl.dionsegijn.konfetti.models.Shape;
@@ -50,7 +55,7 @@ public class Vundet_Galgespillet extends AppCompatActivity implements View.OnCli
         nextLevel.setOnClickListener(this);
 
 
-        // Indhenter data fra 'Spillets_Testrunde'-klassen
+        // Indhenter data fra 'Testrunde'-klassen
         Intent intent = getIntent();
         final int antalForsøg = intent.getIntExtra("antal forsøg", 0);
 
@@ -112,14 +117,6 @@ public class Vundet_Galgespillet extends AppCompatActivity implements View.OnCli
         Konfetti:
         Koden er fundet her: https://android-arsenal.com/details/1/5884
 
-        Animationer:
-        https://lottiefiles.com/677-trophy
-        https://lottiefiles.com/342-success
-        https://lottiefiles.com/11864-crying
-
-        Hjælp til opsætning:
-        https://www.youtube.com/watch?v=T4v72xJqNpQ
-
          */
 
         KonfettiView konfettiView = findViewById(R.id.viewKonfetti);
@@ -145,7 +142,7 @@ public class Vundet_Galgespillet extends AppCompatActivity implements View.OnCli
         editor.putInt("lastscore", score);
         editor.apply();
 
-        Intent intent = new Intent(this, Highscore.class);
+        Intent intent = new Intent(this, Highscore_logik.class);
         startActivity(intent);
 
     }
@@ -188,7 +185,7 @@ public class Vundet_Galgespillet extends AppCompatActivity implements View.OnCli
 
     private void openActivity() {
 
-        Intent intent = new Intent(this, Galge_spillet.class);
+        Intent intent = new Intent(this, GalgeSpillet.class);
         startActivity(intent);
         finish();
 
@@ -196,7 +193,7 @@ public class Vundet_Galgespillet extends AppCompatActivity implements View.OnCli
 
     private void openActivity1() {
 
-        Intent intent = new Intent(this, Spillets_Testrunde.class);
+        Intent intent = new Intent(this, Testrunde.class);
         startActivity(intent);
 
     }

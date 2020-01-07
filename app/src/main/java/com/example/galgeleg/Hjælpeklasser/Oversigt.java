@@ -1,4 +1,4 @@
-package com.example.galgeleg;
+package com.example.galgeleg.Hjælpeklasser;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import com.example.galgeleg.Multiplayer.SpilMedDinMakker;
+import com.example.galgeleg.R;
+import com.example.galgeleg.Singleplayer.Testrunde;
 
 public class Oversigt extends AppCompatActivity implements View.OnClickListener {
 
@@ -16,7 +20,7 @@ public class Oversigt extends AppCompatActivity implements View.OnClickListener 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.oversigt);
 
-        startSpillet_knap = findViewById(R.id.startSpillet_knap);
+        startSpillet_knap = findViewById(R.id.singleplayer_Knap);
         startSpillet_knap.setOnClickListener(this);
 
 
@@ -32,12 +36,12 @@ public class Oversigt extends AppCompatActivity implements View.OnClickListener 
         });
 
 
-        Highscore_knap = findViewById(R.id.Highscore_knap);
+        Highscore_knap = findViewById(R.id.multiplayer_Knap);
         Highscore_knap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                highScoreAktivitet();
+                multiplayerAktivitet();
 
             }
         });
@@ -45,12 +49,13 @@ public class Oversigt extends AppCompatActivity implements View.OnClickListener 
 
     }
 
-    private void highScoreAktivitet() {
+    private void multiplayerAktivitet() {
 
-        Intent intent = new Intent(this, Highscore.class);
-        startActivity(intent);
+    Intent intent = new Intent(this, SpilMedDinMakker.class);
+    startActivity(intent);
 
     }
+
 
     private void HjælpeAktivitet() {
 
@@ -62,7 +67,7 @@ public class Oversigt extends AppCompatActivity implements View.OnClickListener 
     @Override
     public void onClick(View v) {
 
-        Intent intent = new Intent(this, Spillets_Testrunde.class);
+        Intent intent = new Intent(this, Testrunde.class);
         startActivity(intent);
 
     }

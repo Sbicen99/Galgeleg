@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/brugbarFarve"
-    tools:context=".Vundet_Galgespillet">
+    tools:context=".SpilletsAfslutning.Vundet_Galgespillet">
 
 
     <nl.dionsegijn.konfetti.KonfettiView

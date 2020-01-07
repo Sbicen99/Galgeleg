@@ -91,13 +91,13 @@
         app:layout_constraintStart_toStartOf="@+id/imageView10" />
 
     <Button
-        android:id="@+id/startSpillet_knap"
+        android:id="@+id/singleplayer_Knap"
         android:layout_width="190dp"
         android:layout_height="40dp"
         android:layout_marginTop="17dp"
         android:background="@drawable/runde_knapper_green"
         android:fontFamily="casual"
-        android:text="Start spillet"
+        android:text="Singleplayer"
         android:textColor="@android:color/white"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -118,17 +118,17 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/startSpillet_knap" />
+        app:layout_constraintTop_toBottomOf="@+id/singleplayer_Knap" />
 
     <Button
-        android:id="@+id/Highscore_knap"
+        android:id="@+id/multiplayer_Knap"
         android:layout_width="190dp"
         android:layout_height="40dp"
         android:layout_marginTop="24dp"
         android:layout_marginBottom="22dp"
         android:background="@drawable/runde_knapper_green"
         android:fontFamily="casual"
-        android:text="Highscore"
+        android:text="Multiplayer"
         android:textColor="@android:color/white"
         android:textSize="18sp"
         android:textStyle="bold"

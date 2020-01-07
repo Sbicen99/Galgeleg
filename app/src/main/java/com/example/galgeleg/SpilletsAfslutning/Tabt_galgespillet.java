@@ -1,4 +1,4 @@
-package com.example.galgeleg;
+package com.example.galgeleg.SpilletsAfslutning;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -6,48 +6,62 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class Hjaelp extends AppCompatActivity implements View.OnClickListener {
+import com.example.galgeleg.R;
+import com.example.galgeleg.Singleplayer.GalgeSpillet;
+import com.example.galgeleg.Singleplayer.Testrunde;
 
-    private Button tilbageKnap;
-    private TextView textV;
+public class Tabt_galgespillet extends AppCompatActivity implements View.OnClickListener {
 
+
+    private TextView TV_tabt;
+    private Button prøvigenKnap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.hjaelp);
-
-        textV = findViewById(R.id.textV);
-        textV.setText("- Du skal kun skrive ét bogstav" +
-                "\n- Du må ikke benytte CAPS LOCK" + "\n- Når du ser hele figuren og hører lyden, er spillet færdigt " + "\n- Du må ikke benytte tal" +
-                "\n\n\nHints: der er 9 ord i galgespillet, som har at gøre med: " +
-                "\n\n- Computer Science" + "\n- Transportmidler/transport" + "\n- Dyr");
+        setContentView(R.layout.tabt_galgespillet);
 
 
-        tilbageKnap = findViewById(R.id.tilbageKnap);
+        TV_tabt = findViewById(R.id.TV_tabt);
 
-        tilbageKnap.setOnClickListener(this);
+        prøvigenKnap = findViewById(R.id.prøvigenKnap);
+
+
+        // Indhenter data fra 'Testrunde'-klassen
+        Intent i = getIntent();
+        final String mitOrd = i.getStringExtra("mit ord");
+
+
+
+        TV_tabt.setText("DU HAR TABT! - prøv igen" + "\nOrdet var: " + mitOrd
+                + "\nDu kan prøve igen, tryk på 'Prøv igen'");
+
+        prøvigenKnap.setOnClickListener(this);
+
+        MediaPlayer mp = MediaPlayer.create(this,R.raw.tabt);
+        mp.start();
+
 
     }
 
     @Override
     public void onClick(View view) {
 
-
-        // Viser en dialogboks
-        AlertDialog.Builder builder = new AlertDialog.Builder(Hjaelp.this);
-        builder.setMessage("Er du bedre udrustet nu?")
+        //Viser en dialogboks
+        AlertDialog.Builder builder = new AlertDialog.Builder(Tabt_galgespillet.this);
+        builder.setMessage("Ønsker du at prøve testrunden igen?")
                 .setCancelable(false)
                 .setPositiveButton("Ja!", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
 
-                       positiv();
+                        openActivity();
                     }
                 })
 
@@ -55,7 +69,7 @@ public class Hjaelp extends AppCompatActivity implements View.OnClickListener {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
 
-                        negativ();
+                        openActivity1();
 
                     }
                 });
@@ -70,22 +84,19 @@ public class Hjaelp extends AppCompatActivity implements View.OnClickListener {
         Button pbutton = alert.getButton(DialogInterface.BUTTON_POSITIVE);
         pbutton.setTextColor(Color.BLACK);
 
-
     }
 
-    private void negativ() {
+    private void openActivity1() {
 
-        Intent intent = new Intent(this, Hjaelp.class);
+        Intent intent = new Intent(this, GalgeSpillet.class);
         startActivity(intent);
 
     }
 
-    private void positiv() {
+    private void openActivity() {
 
-        Intent intent = new Intent(this, Oversigt.class);
+        Intent intent = new Intent(this, Testrunde.class);
         startActivity(intent);
-        finish();
-
 
     }
 }
